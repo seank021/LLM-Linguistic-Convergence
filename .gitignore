@@ -1,0 +1,4 @@
+conversations/
+results/
+.env
+venv/
