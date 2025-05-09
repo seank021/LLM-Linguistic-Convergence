@@ -27,13 +27,13 @@ pip install python-dotenv
 LLM-Linguistic-Convergence/
 ├── configs/                        # Model and persona configuration files
 │   ├── models/ 
-|       └── gpt-4o.json
+|       └── gpt4o.json
 │   └── personas/                   
 │       └── age_pair.json
 │       └── culture_pair.json
 │       └── dialogue_style_pair.json
 ├── conversations/                  # Output folder for generated dialogues
-│   └── gpt-4o_age/                 # Subfolder per model-persona combo
+│   └── gpt4o_age/                 # Subfolder per model-persona combo
 │       └── ...
 ├── results/                        # Output folder for analyzed results
 │   └── figures/

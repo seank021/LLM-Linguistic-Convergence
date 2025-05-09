@@ -9,7 +9,7 @@ load_dotenv()
 def load_config(model_path, persona_path):
     """
     Load the model and persona configuration files.
-    - model_path: str, path to the model configuration file (e.g., "configs/models/gpt-4o.json")
+    - model_path: str, path to the model configuration file (e.g., "configs/models/gpt4o.json")
     - persona_path: str, path to the persona configuration file (e.g., "configs/personas/age_pair.json")
     """
 
@@ -50,7 +50,7 @@ def generate_conversation(model_cfg, persona_cfg, num_turns):
     INITIAL_PROMPT_for_B = "“Sir” and “ma’am” are dead 💀 — and that’s a good thing 🥳🎉. Agree or disagree?"
 
     def query_model(system_msg, history):
-        trimmed_history = history[-10:] # Keep only the last 5 turns to avoid unnecessary context
+        trimmed_history = history[-12:] # Keep only the last 6 turns to avoid unnecessary context
         messages = [{"role": "system", "content": system_msg}] + trimmed_history    
         response = client.chat.completions.create(
             model=model_id,
@@ -98,7 +98,7 @@ def generate_conversation(model_cfg, persona_cfg, num_turns):
 def save_conversation(model_name, pair_id, style_a, style_b, conversation1, conversation2):
     """ 
     Save the conversation to a JSON file.
-    - model_name: str, name of the model (e.g., "gpt-4o")
+    - model_name: str, name of the model (e.g., "gpt4o")
     - pair_id: str, identifier for the conversation pair (e.g., "age")
     - style_a: str, style id of the first participant (e.g., "z_gen_informal")
     - style_b: str, style id of the second participant (e.g., "elder_formal")
@@ -165,7 +165,7 @@ if __name__ == "__main__":
         print("Usage: python dialogue_simulator.py <model_pathname> <pair_pathname> <num_turns>")
         sys.exit(1)
     
-    model_pathname = sys.argv[1] # "gpt-4o"
+    model_pathname = sys.argv[1] # "gpt4o"
     pair_pathname = sys.argv[2] # one of ["age_pair", "culture_pair", "dialogue_style_pair"]
     num_turns = int(sys.argv[3]) # number of turns in the conversation
 
@@ -181,6 +181,6 @@ if __name__ == "__main__":
 
     # Save the conversation
     print(f"Saving conversation...")
-    model_name = model_cfg["model_id"]
+    model_name = model_cfg["model_name"]
     pair_id = persona_cfg["pair_id"]
     save_conversation(model_name, pair_id, style_a, style_b, conversation1, conversation2)
