@@ -20,6 +20,7 @@ source venv/bin/activate # macOS
 ```
 pip install openai
 pip install python-dotenv
+pip install matplotlib
 ```
 
 ## Directory Structure
