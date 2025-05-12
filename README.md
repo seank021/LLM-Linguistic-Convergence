@@ -22,6 +22,8 @@ pip install openai
 pip install python-dotenv
 pip install matplotlib
 pip install nltk
+nltk.download("punkt_tab")
+nltk.download("stopwords")
 npm install hedges
 ```
 
