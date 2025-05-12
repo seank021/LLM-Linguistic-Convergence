@@ -4,11 +4,11 @@ import os
 import matplotlib.pyplot as plt
 
 # ========== Utility Functions ==========
-def load_conversation(file_path):
+def load_json(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def dict_to_list(d):
+def json_to_list(d):
     filtered = {k: v for k, v in d.items() if not k.endswith('_0')} # Filter out key that ends with '_0' (initial prompt)
     result = [filtered[k] for k in filtered.keys()]
     return result
@@ -62,10 +62,10 @@ if __name__ == "__main__":
         persona2 = "neutral_mediator"
 
     # Load the conversation
-    persona1_conv1 = dict_to_list(load_conversation(f"conversations/{conversation_type}/conversation1_{persona1}.json"))
-    persona1_conv2 = dict_to_list(load_conversation(f"conversations/{conversation_type}/conversation2_{persona1}.json"))
-    persona2_conv1 = dict_to_list(load_conversation(f"conversations/{conversation_type}/conversation1_{persona2}.json"))
-    persona2_conv2 = dict_to_list(load_conversation(f"conversations/{conversation_type}/conversation2_{persona2}.json"))
+    persona1_conv1 = json_to_list(load_json(f"conversations/{conversation_type}/conversation1_{persona1}.json"))
+    persona1_conv2 = json_to_list(load_json(f"conversations/{conversation_type}/conversation2_{persona1}.json"))
+    persona2_conv1 = json_to_list(load_json(f"conversations/{conversation_type}/conversation1_{persona2}.json"))
+    persona2_conv2 = json_to_list(load_json(f"conversations/{conversation_type}/conversation2_{persona2}.json"))
     
     # Sentence length analysis
     persona1_conv1_lengths = sentence_length_analysis(persona1_conv1)
