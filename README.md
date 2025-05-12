@@ -21,6 +21,8 @@ source venv/bin/activate # macOS
 pip install openai
 pip install python-dotenv
 pip install matplotlib
+pip install nltk
+npm install hedges
 ```
 
 ## Directory Structure
