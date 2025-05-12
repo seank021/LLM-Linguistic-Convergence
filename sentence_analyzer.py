@@ -83,7 +83,7 @@ if __name__ == "__main__":
     os.makedirs(out_dir_stats, exist_ok=True)
     os.makedirs(out_dir_figures, exist_ok=True)
 
-    stats = {
+    sentence_len_stats = {
         f"{persona1}": {
             "sentence_lengths_total": persona1_avg_lengths,
             "sentence_lengths_total_avg": sum(persona1_avg_lengths) / len(persona1_avg_lengths),
@@ -101,7 +101,7 @@ if __name__ == "__main__":
             "sentence_lengths_conv2_avg": sum(persona2_conv2_lengths) / len(persona2_conv2_lengths)
         }
     }
-    save_stats_to_file(stats, f"{out_dir_stats}/sentence_length.json")
+    save_stats_to_file(sentence_len_stats, f"{out_dir_stats}/sentence_length.json")
     draw_plots(persona1_conv1_lengths, persona2_conv1_lengths, [persona1, persona2], "sentence_length_conv1", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
     draw_plots(persona1_conv2_lengths, persona2_conv2_lengths, [persona1, persona2], "sentence_length_conv2", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
     draw_plots(persona1_avg_lengths, persona2_avg_lengths, [persona1, persona2], "sentence_length_avg", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
