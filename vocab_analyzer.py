@@ -2,25 +2,25 @@ import json
 import sys
 import os
 import matplotlib.pyplot as plt
-import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 
 # Ensure NLTK resources are downloaded
+# import nltk
 # nltk.download("punkt_tab")
 # nltk.download("stopwords")
 
 # ========== Utility Functions ==========
-def tokenize(text):
-    tokens = word_tokenize(text.lower())
-    return [t for t in tokens if t.isalpha() and t not in stopwords.words("english")]
-
 def load_json(path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 def json_to_list(d): # for conversations
     return [v for k, v in sorted(d.items()) if not k.endswith("_0")]
+
+def tokenize(text):
+    tokens = word_tokenize(text.lower())
+    return [t for t in tokens if t.isalpha() and t not in stopwords.words("english")]
 
 # ========== Anaysis Functions ==========
 
@@ -43,23 +43,16 @@ def hedging_rate_turn(conversation): # per turn
 def hedging_rate_avg(conversation1, conversation2): # average of two conversations (for conv1 and conv2)
     return [(a + b) / 2 for a, b in zip(hedging_rate_turn(conversation1), hedging_rate_turn(conversation2))]
 
-# Lexical overlap
-def lexical_overlap_turn(conversation1, conversation2): # per turn
-    overlap_rates = []
+# Jaccard similarity
+def jaccard_similarity_turn(conversation1, conversation2): # per turn
+    sim = []
     for sentence1, sentence2 in zip(conversation1, conversation2):
-        tokens_a = set(tokenize(sentence1))
-        tokens_b = set(tokenize(sentence2))
-        overlap = len(tokens_a.intersection(tokens_b)) / len(tokens_a.union(tokens_b))
-        overlap_rates.append(overlap)
-    return overlap_rates
-
-def lexical_overlap(conversation1, conversation2):
-    texts_a = [sentence for sentence in conversation1]
-    texts_b = [sentence for sentence in conversation2]
-    tokens_a = set(tokenize(" ".join(texts_a)))
-    tokens_b = set(tokenize(" ".join(texts_b)))
-    overlap = len(tokens_a.intersection(tokens_b)) / len(tokens_a.union(tokens_b))
-    return overlap
+        set_1 = set(tokenize(sentence1))
+        set_2 = set(tokenize(sentence2))
+        union = set_1 | set_2
+        intersection = set_1 & set_2
+        sim.append(len(intersection) / len(union) if union else 0)
+    return sim
 
 # ========== Saving statistics and Drawing Plots ==========
 def save_stats_to_file(stats, file_path):
@@ -140,35 +133,31 @@ if __name__ == "__main__":
     draw_plots(persona1_conv1_hedging, persona2_conv1_hedging, [persona1, persona2], "hedging_rate_conv1", out_dir_figures, "Dialogue Turn", "Hedging Rate")
     draw_plots(persona1_conv2_hedging, persona2_conv2_hedging, [persona1, persona2], "hedging_rate_conv2", out_dir_figures, "Dialogue Turn", "Hedging Rate")
     draw_plots(persona1_avg_hedging, persona2_avg_hedging, [persona1, persona2], "hedging_rate_avg", out_dir_figures, "Dialogue Turn", "Hedging Rate")
-
     print(f"Stats saved to {out_dir_stats}/hedging_rate_analysis.json")
     print(f"Figures saved to {out_dir_figures}")
 
-    # ----- Lexical overlap analysis -----
-    conv1_overlap_turn = lexical_overlap_turn(persona1_conv1, persona2_conv1)
-    conv2_overlap_turn = lexical_overlap_turn(persona1_conv2, persona2_conv2)
-    conv1_avg_overlap = lexical_overlap(persona1_conv1, persona2_conv1)
-    conv2_avg_overlap = lexical_overlap(persona1_conv2, persona2_conv2)
-    total_avg_overlap = lexical_overlap(persona1_conv1 + persona1_conv2, persona2_conv1 + persona2_conv2)
+    # ----- Jaccard similarity analysis -----
+    jaccard_sim_conv1 = jaccard_similarity_turn(persona1_conv1, persona2_conv1)
+    jaccard_sim_conv2 = jaccard_similarity_turn(persona1_conv2, persona2_conv2)
+    jaccard_sim_avg = [(a + b) / 2 for a, b in zip(jaccard_sim_conv1, jaccard_sim_conv2)]
 
-    overlap_stats = {
-        "lexical_overlap": {
+    jaccard_stats = {
+        "jaccard_similarity": {
             "conv1": {
-                "overlap_rate": conv1_avg_overlap,
-                "overlap_rate_turn": conv1_overlap_turn
+                "similarity_rate_turn": jaccard_sim_conv1,
+                "similarity_rate_avg": sum(jaccard_sim_conv1) / len(jaccard_sim_conv1)
             },
             "conv2": {
-                "overlap_rate": conv2_avg_overlap,
-                "overlap_rate_turn": conv2_overlap_turn
+                "similarity_rate_turn": jaccard_sim_conv2,
+                "similarity_rate_avg": sum(jaccard_sim_conv2) / len(jaccard_sim_conv2)
             },
             "total": {
-                "overlap_rate": total_avg_overlap
+                "similarity_rate_turn": jaccard_sim_avg,
+                "similarity_rate": sum(jaccard_sim_avg) / len(jaccard_sim_avg)
             }
         }
     }
-    save_stats_to_file(overlap_stats, f"{out_dir_stats}/lexical_overlap.json")
-    draw_plots(conv1_overlap_turn, conv2_overlap_turn, ["conv1", "conv2"], "lexical_overlap_turn", out_dir_figures, "Dialogue Turn", "Lexical Overlap Rate") # lexical overlap between two personas in conv1 and conv2
-    
-    print(f"Stats saved to {out_dir_stats}/lexical_overlap_analysis.json")
+    save_stats_to_file(jaccard_stats, f"{out_dir_stats}/jaccard_similarity.json")
+    draw_plots(jaccard_sim_conv1, jaccard_sim_conv2, ["conv1", "conv2"], "jaccard_similarity_turn", out_dir_figures, "Dialogue Turn", "Jaccard Similarity Rate") # Jaccard similarity between two personas in conv1 and conv2
+    print(f"Stats saved to {out_dir_stats}/jaccard_similarity_analysis.json")
     print(f"Figures saved to {out_dir_figures}")
-

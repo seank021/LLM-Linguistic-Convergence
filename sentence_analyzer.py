@@ -105,6 +105,5 @@ if __name__ == "__main__":
     draw_plots(persona1_conv1_lengths, persona2_conv1_lengths, [persona1, persona2], "sentence_length_conv1", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
     draw_plots(persona1_conv2_lengths, persona2_conv2_lengths, [persona1, persona2], "sentence_length_conv2", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
     draw_plots(persona1_avg_lengths, persona2_avg_lengths, [persona1, persona2], "sentence_length_avg", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
-    
     print(f"Stats saved to {out_dir_stats}/sentence_length.json")
     print(f"Figures saved to {out_dir_figures}")
