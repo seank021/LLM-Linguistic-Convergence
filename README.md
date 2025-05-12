@@ -58,4 +58,4 @@ LLM-Linguistic-Convergence/
 - refer to `scripts/run_conversation.sh`
 ### 2. Analysis Phase
 - refer to `scripts/analyze.sh`
-  (running `scripts/get_hedge_list.sh` is needed before this)
+- (running `scripts/get_hedge_list.sh` is needed before this)
