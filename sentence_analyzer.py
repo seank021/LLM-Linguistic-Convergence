@@ -29,12 +29,12 @@ def save_stats_to_file(stats, file_path):
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=4)
 
-def draw_plots(lengths1, lengths2, labels, title, out_dir):
+def draw_plots(lengths1, lengths2, labels, title, out_dir, xlabel, ylabel):
     plt.figure(figsize=(10, 5))
     plt.plot(lengths1, label=labels[0])
     plt.plot(lengths2, label=labels[1])
-    plt.xlabel("Dialogue Turn")
-    plt.ylabel("Sentence Length (Number of Words)")
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
     plt.xticks(range(len(lengths1)), range(1, len(lengths1) + 1))
     plt.legend()
     
@@ -102,9 +102,9 @@ if __name__ == "__main__":
         }
     }
     save_stats_to_file(stats, f"{out_dir_stats}/sentence_length.json")
-    draw_plots(persona1_conv1_lengths, persona2_conv1_lengths, [persona1, persona2], "sentence_length_conv1", out_dir_figures)
-    draw_plots(persona1_conv2_lengths, persona2_conv2_lengths, [persona1, persona2], "sentence_length_conv2", out_dir_figures)
-    draw_plots(persona1_avg_lengths, persona2_avg_lengths, [persona1, persona2], "sentence_length_avg", out_dir_figures)
+    draw_plots(persona1_conv1_lengths, persona2_conv1_lengths, [persona1, persona2], "sentence_length_conv1", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
+    draw_plots(persona1_conv2_lengths, persona2_conv2_lengths, [persona1, persona2], "sentence_length_conv2", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
+    draw_plots(persona1_avg_lengths, persona2_avg_lengths, [persona1, persona2], "sentence_length_avg", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
     
     print(f"Stats saved to {out_dir_stats}/sentence_length_analysis.json")
     print(f"Figures saved to {out_dir_figures}")
