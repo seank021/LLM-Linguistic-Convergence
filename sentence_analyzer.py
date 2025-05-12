@@ -8,7 +8,7 @@ def load_json(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def json_to_list(d):
+def json_to_list(d): # for conversations
     filtered = {k: v for k, v in d.items() if not k.endswith('_0')} # Filter out key that ends with '_0' (initial prompt)
     result = [filtered[k] for k in filtered.keys()]
     return result
