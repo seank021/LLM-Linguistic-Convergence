@@ -3,7 +3,7 @@ import sys
 import os
 import matplotlib.pyplot as plt
 
-# ========== Analysis of Sentence Lengths in Conversations ==========
+# ========== Utility Functions ==========
 def load_conversation(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -13,6 +13,7 @@ def dict_to_list(d):
     result = [filtered[k] for k in filtered.keys()]
     return result
 
+# ========== Sentence Length Analysis ==========
 def sentence_length_analysis(conversation):
     sentence_lengths = []
     for sentence in conversation:
@@ -23,6 +24,7 @@ def sentence_length_analysis(conversation):
 def average_sentence_lengths(lengths1, lengths2):
     return [(a + b) / 2 for a, b in zip(lengths1, lengths2)]
 
+# ========== Saving statistics and Drawing Plots ==========
 def save_stats_to_file(stats, file_path):
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=4)
@@ -42,7 +44,7 @@ def draw_plots(lengths1, lengths2, labels, title, out_dir):
     plt.savefig(out_path)
     plt.close()
 
-
+# ========== Main Function ==========
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python sentence_anaylzer.py <conversation_type>")
