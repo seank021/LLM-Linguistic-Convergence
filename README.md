@@ -38,7 +38,7 @@ LLM-Linguistic-Convergence/
 │       └── culture_pair.json
 │       └── dialogue_style_pair.json
 ├── conversations/                  # Output folder for generated dialogues
-│   └── gpt4o_age/                 # Subfolder per model-persona combo
+│   └── gpt4o_age/                  # Subfolder per model-persona combo
 │       └── ...
 ├── results/                        # Output folder for analyzed results
 │   └── figures/
@@ -52,3 +52,10 @@ LLM-Linguistic-Convergence/
 ├── .env                            # Stores OpenAI API key
 └── README.md                       # Project documentation
 ```
+
+## Execution
+### 1. Conversation Generation
+- refer to `scripts/run_conversation.sh`
+### 2. Analysis Phase
+- refer to `scripts/analyze.sh`
+  (running `scripts/get_hedge_list.sh` is needed before this)
