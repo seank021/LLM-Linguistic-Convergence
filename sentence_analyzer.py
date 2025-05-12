@@ -78,8 +78,8 @@ if __name__ == "__main__":
     persona2_avg_lengths = average_sentence_lengths(persona2_conv1_lengths, persona2_conv2_lengths)
 
     # Save the results
-    out_dir_stats = f"results/stats/{conversation_type}"
-    out_dir_figures = f"results/figures/{conversation_type}"
+    out_dir_stats = f"results/stats/{conversation_type}/sentence"
+    out_dir_figures = f"results/figures/{conversation_type}/sentence"
     os.makedirs(out_dir_stats, exist_ok=True)
     os.makedirs(out_dir_figures, exist_ok=True)
 
