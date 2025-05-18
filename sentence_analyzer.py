@@ -61,21 +61,33 @@ if __name__ == "__main__":
         persona1 = "aggressive_debater"
         persona2 = "neutral_mediator"
 
-    # Load the conversation
-    persona1_conv1 = json_to_list(load_json(f"conversations/{conversation_type}/conversation1_{persona1}.json"))
-    persona1_conv2 = json_to_list(load_json(f"conversations/{conversation_type}/conversation2_{persona1}.json"))
-    persona2_conv1 = json_to_list(load_json(f"conversations/{conversation_type}/conversation1_{persona2}.json"))
-    persona2_conv2 = json_to_list(load_json(f"conversations/{conversation_type}/conversation2_{persona2}.json"))
+    # Load the conversations
+    conv1_persona1 = json_to_list(load_json(f"conversations/{conversation_type}/conversation1/{persona1}.json"))
+    conv1_persona2 = json_to_list(load_json(f"conversations/{conversation_type}/conversation1/{persona2}.json"))
+    conv2_persona1 = json_to_list(load_json(f"conversations/{conversation_type}/conversation2/{persona1}.json"))
+    conv2_persona2 = json_to_list(load_json(f"conversations/{conversation_type}/conversation2/{persona2}.json"))
+    conv3_baseline1 = json_to_list(load_json(f"conversations/{conversation_type}/conversation3/baseline1.json"))
+    conv3_baseline2 = json_to_list(load_json(f"conversations/{conversation_type}/conversation3/baseline2.json"))
+    conv4_baseline = json_to_list(load_json(f"conversations/{conversation_type}/conversation4/baseline.json"))
+    conv4_persona1 = json_to_list(load_json(f"conversations/{conversation_type}/conversation4/{persona1}.json"))
+    conv5_baseline = json_to_list(load_json(f"conversations/{conversation_type}/conversation5/baseline.json"))
+    conv5_persona2 = json_to_list(load_json(f"conversations/{conversation_type}/conversation5/{persona2}.json"))
     
     # Sentence length analysis
-    persona1_conv1_lengths = sentence_length_analysis(persona1_conv1)
-    persona1_conv2_lengths = sentence_length_analysis(persona1_conv2)
-    persona2_conv1_lengths = sentence_length_analysis(persona2_conv1)
-    persona2_conv2_lengths = sentence_length_analysis(persona2_conv2)
+    conv1_persona1_lengths = sentence_length_analysis(conv1_persona1)
+    conv1_persona2_lengths = sentence_length_analysis(conv1_persona2)
+    conv2_persona1_lengths = sentence_length_analysis(conv2_persona1)
+    conv2_persona2_lengths = sentence_length_analysis(conv2_persona2)
+    conv3_baseline1_lengths = sentence_length_analysis(conv3_baseline1)
+    conv3_baseline2_lengths = sentence_length_analysis(conv3_baseline2)
+    conv4_baseline_lengths = sentence_length_analysis(conv4_baseline)
+    conv4_persona1_lengths = sentence_length_analysis(conv4_persona1)
+    conv5_baseline_lengths = sentence_length_analysis(conv5_baseline)
+    conv5_persona2_lengths = sentence_length_analysis(conv5_persona2)
 
-    # Average sentence length
-    persona1_avg_lengths = average_sentence_lengths(persona1_conv1_lengths, persona1_conv2_lengths)
-    persona2_avg_lengths = average_sentence_lengths(persona2_conv1_lengths, persona2_conv2_lengths)
+    # Average sentence length - for conv1 and conv2, since it is important wheter persona1 or persona2 is the first speaker
+    conv1_conv2_persona1_avg_lengths = average_sentence_lengths(conv1_persona1_lengths, conv2_persona1_lengths)
+    conv1_conv2_persona2_avg_lengths = average_sentence_lengths(conv1_persona2_lengths, conv2_persona2_lengths)
 
     # Save the results
     out_dir_stats = f"results/stats/{conversation_type}/sentence"
@@ -83,27 +95,78 @@ if __name__ == "__main__":
     os.makedirs(out_dir_stats, exist_ok=True)
     os.makedirs(out_dir_figures, exist_ok=True)
 
+    # Statistics
     sentence_len_stats = {
-        f"{persona1}": {
-            "sentence_lengths_total": persona1_avg_lengths,
-            "sentence_lengths_total_avg": sum(persona1_avg_lengths) / len(persona1_avg_lengths),
-            "sentence_lengths_conv1": persona1_conv1_lengths,
-            "sentence_lengths_conv1_avg": sum(persona1_conv1_lengths) / len(persona1_conv1_lengths),
-            "sentence_lengths_conv2": persona1_conv2_lengths,
-            "sentence_lengths_conv2_avg": sum(persona1_conv2_lengths) / len(persona1_conv2_lengths)
+        "conv1": {
+            "persona1": {
+                "lengths": conv1_persona1_lengths,
+                "avg_length": sum(conv1_persona1_lengths) / len(conv1_persona1_lengths)
+            },
+            "persona2": {
+                "lengths": conv1_persona2_lengths,
+                "avg_length": sum(conv1_persona2_lengths) / len(conv1_persona2_lengths)
+            }
         },
-        f"{persona2}": {
-            "sentence_lengths_total": persona2_avg_lengths,
-            "sentence_lengths_total_avg": sum(persona2_avg_lengths) / len(persona2_avg_lengths),
-            "sentence_lengths_conv1": persona2_conv1_lengths,
-            "sentence_lengths_conv1_avg": sum(persona2_conv1_lengths) / len(persona2_conv1_lengths),
-            "sentence_lengths_conv2": persona2_conv2_lengths,
-            "sentence_lengths_conv2_avg": sum(persona2_conv2_lengths) / len(persona2_conv2_lengths)
+        "conv2": {
+            "persona1": {
+                "lengths": conv2_persona1_lengths,
+                "avg_length": sum(conv2_persona1_lengths) / len(conv2_persona1_lengths)
+            },
+            "persona2": {
+                "lengths": conv2_persona2_lengths,
+                "avg_length": sum(conv2_persona2_lengths) / len(conv2_persona2_lengths)
+            }
+        },
+        "conv1 + conv2 average": {
+            "persona1": {
+                "lengths": conv1_conv2_persona1_avg_lengths,
+                "avg_length": sum(conv1_conv2_persona1_avg_lengths) / len(conv1_conv2_persona1_avg_lengths)
+            },
+            "persona2": {
+                "lengths": conv1_conv2_persona2_avg_lengths,
+                "avg_length": sum(conv1_conv2_persona2_avg_lengths) / len(conv1_conv2_persona2_avg_lengths)
+            }
+        },
+        "conv3": {
+            "baseline1": {
+                "lengths": conv3_baseline1_lengths,
+                "avg_length": sum(conv3_baseline1_lengths) / len(conv3_baseline1_lengths)
+            },
+            "baseline2": {
+                "lengths": conv3_baseline2_lengths,
+                "avg_length": sum(conv3_baseline2_lengths) / len(conv3_baseline2_lengths)
+            }
+        },
+        "conv4": {
+            "baseline": {
+                "lengths": conv4_baseline_lengths,
+                "avg_length": sum(conv4_baseline_lengths) / len(conv4_baseline_lengths)
+            },
+            "persona1": {
+                "lengths": conv4_persona1_lengths,
+                "avg_length": sum(conv4_persona1_lengths) / len(conv4_persona1_lengths)
+            }
+        },
+        "conv5": {
+            "baseline": {
+                "lengths": conv5_baseline_lengths,
+                "avg_length": sum(conv5_baseline_lengths) / len(conv5_baseline_lengths)
+            },
+            "persona2": {
+                "lengths": conv5_persona2_lengths,
+                "avg_length": sum(conv5_persona2_lengths) / len(conv5_persona2_lengths)
+            }
         }
     }
     save_stats_to_file(sentence_len_stats, f"{out_dir_stats}/sentence_length.json")
-    draw_plots(persona1_conv1_lengths, persona2_conv1_lengths, [persona1, persona2], "sentence_length_conv1", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
-    draw_plots(persona1_conv2_lengths, persona2_conv2_lengths, [persona1, persona2], "sentence_length_conv2", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
-    draw_plots(persona1_avg_lengths, persona2_avg_lengths, [persona1, persona2], "sentence_length_avg", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
+
+    # Plots
+    draw_plots(conv1_persona1_lengths, conv1_persona2_lengths, [persona1, persona2], "sentence_length_conv1", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
+    draw_plots(conv2_persona1_lengths, conv2_persona2_lengths, [persona1, persona2], "sentence_length_conv2", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
+    draw_plots(conv1_conv2_persona1_avg_lengths, conv1_conv2_persona2_avg_lengths, [persona1, persona2], "sentence_length_conv1_conv2_avg", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
+    draw_plots(conv3_baseline1_lengths, conv3_baseline2_lengths, ["Baseline 1", "Baseline 2"], "sentence_length_conv3", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
+    draw_plots(conv4_baseline_lengths, conv4_persona1_lengths, ["Baseline", persona1], "sentence_length_conv4", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
+    draw_plots(conv5_baseline_lengths, conv5_persona2_lengths, ["Baseline", persona2], "sentence_length_conv5", out_dir_figures, "Dialogue Turn", "Sentence Length (Number of Words)")
+
     print(f"Stats saved to {out_dir_stats}/sentence_length.json")
     print(f"Figures saved to {out_dir_figures}")

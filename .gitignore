@@ -2,3 +2,4 @@ conversations/
 results/
 .env
 venv/
+node_modules/
