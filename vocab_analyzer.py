@@ -85,11 +85,14 @@ if __name__ == "__main__":
         persona1 = "z_gen_informal"
         persona2 = "elder_formal"
     elif conversation_type == "gpt4o_culture":
-        persona1 = "us_direct"
-        persona2 = "uk_polite"
-    else:
-        persona1 = "aggressive_debater"
-        persona2 = "neutral_mediator"
+        persona1 = "aave_style"
+        persona2 = "sae_formal"
+    elif conversation_type == "gpt4o_tone_valence":
+        persona1 = "polite_positive"
+        persona2 = "impolite_negative"
+    else: # conversation_type == "gpt4o_thinking_style"
+        persona1 = "creative_expressive"
+        persona2 = "analytical_reserved"
 
     # Load the conversation
     conv1_persona1 = json_to_list(load_json(f"conversations/{conversation_type}/conversation1/{persona1}.json"))
