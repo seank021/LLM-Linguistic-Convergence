@@ -49,8 +49,23 @@ def generate_conversation(model_cfg, persona_cfg, num_turns, selected_convs):
     client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     # Intial prompts
-    INITIAL_PROMPT_for_A = "Why do some young people refuse to use “sir” or “ma’am” anymore? Have they lost all sense of respect, or are they just being real?"
-    INITIAL_PROMPT_for_B = "“Sir” and “ma’am” are dead 💀 — and that’s a good thing 🥳🎉. Agree or disagree?"
+    if style_a == "z_gen_informal":
+        # topic: respectful language on elderly
+        INITIAL_PROMPT_for_A = "Why do some young people refuse to use 'sir' or 'ma'am' anymore? Have they lost all sense of respect, or are they just being real?"
+        INITIAL_PROMPT_for_B = "“Sir” and “ma’am” are dead 💀 — and that’s a good thing 🥳🎉. Agree or disagree?"
+    elif style_a == "aave_style":
+        # topic: importance of traditional grammar and pronunciation
+        INITIAL_PROMPT_for_A = "Do you believe it's important to preserve traditional grammar and pronunciation in public speech? Or should we embrace evolving, community-driven ways of speaking?"
+        INITIAL_PROMPT_for_B = "Who say talkin different mean talkin wrong? Language change all the time — let folks speak how they speak. You feel me or nah?"
+    elif style_a == "creative_expressive":
+        # topic: logic vs. creativity
+        INITIAL_PROMPT_for_A = "Some say logic rules the world, but what about the wild spark of imagination, or the thrill of an idea that makes no sense but feels completely right? Isn’t that what makes us human?"
+        INITIAL_PROMPT_for_B = "While creativity may feel inspiring, doesn’t unstructured thinking often lead to confusion or error? Isn’t disciplined reasoning more reliable for understanding reality?"
+    else: # style_a == "polite_positive"
+        # topic: politeness vs. honesty
+        INITIAL_PROMPT_for_A = "Even when we disagree, don’t you think a kind word or a little patience can go a long way? Isn’t respect what keeps conversations human?"
+        INITIAL_PROMPT_for_B = "Being polite is just sugarcoating. Why fake nice when most people don’t care anyway? Isn’t honesty better than pretending to be decent?"
+    
     INITIAL_PROMPT_for_BASELINE = "What are your thoughts on the use of formal language in modern communication? Do you think it is still relevant or necessary in today's society?"
 
     # Models with persona
@@ -203,11 +218,10 @@ def save_conversation(model_name, pair_id, style_a, style_b, conversations):
     # Create the output directory if it doesn't exist
     out_dir = f"conversations/{model_name}_{pair_id}"
     os.makedirs(out_dir, exist_ok=True)
-    for sub in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5"]:
-        os.makedirs(os.path.join(out_dir, sub), exist_ok=True)
 
     # Save the conversation data
     if conversations.get("conversation1") is not None:
+        os.makedirs(os.path.join(out_dir, "conversation1"), exist_ok=True)
         conversation1 = conversations["conversation1"]
         with open(f"{out_dir}/conversation1/total.json", "w", encoding="utf-8") as f: # Save the entire conversation
             json.dump(conversation1, f, indent=4, ensure_ascii=False)
@@ -222,6 +236,7 @@ def save_conversation(model_name, pair_id, style_a, style_b, conversations):
         with open(f"{out_dir}/conversation1/{style_b}.json", "w", encoding="utf-8") as f:
             json.dump(json_conv1_b, f, indent=4, ensure_ascii=False)
     if conversations.get("conversation2") is not None:
+        os.makedirs(os.path.join(out_dir, "conversation2"), exist_ok=True)
         conversation2 = conversations["conversation2"]
         with open(f"{out_dir}/conversation2/total.json", "w", encoding="utf-8") as f:
             json.dump(conversation2, f, indent=4, ensure_ascii=False)
@@ -236,6 +251,7 @@ def save_conversation(model_name, pair_id, style_a, style_b, conversations):
         with open(f"{out_dir}/conversation2/{style_b}.json", "w", encoding="utf-8") as f:
             json.dump(json_conv2_b, f, indent=4, ensure_ascii=False)
     if conversations.get("conversation3") is not None:
+        os.makedirs(os.path.join(out_dir, "conversation3"), exist_ok=True)
         conversation3 = conversations["conversation3"]
         with open(f"{out_dir}/conversation3/total.json", "w", encoding="utf-8") as f:
             json.dump(conversation3, f, indent=4, ensure_ascii=False)
@@ -250,6 +266,7 @@ def save_conversation(model_name, pair_id, style_a, style_b, conversations):
         with open(f"{out_dir}/conversation3/baseline2.json", "w", encoding="utf-8") as f:
             json.dump(json_conv3_baseline2, f, indent=4, ensure_ascii=False)
     if conversations.get("conversation4") is not None:
+        os.makedirs(os.path.join(out_dir, "conversation4"), exist_ok=True)
         conversation4 = conversations["conversation4"]
         with open(f"{out_dir}/conversation4/total.json", "w", encoding="utf-8") as f:
             json.dump(conversation4, f, indent=4, ensure_ascii=False)
@@ -264,6 +281,7 @@ def save_conversation(model_name, pair_id, style_a, style_b, conversations):
         with open(f"{out_dir}/conversation4/{style_a}.json", "w", encoding="utf-8") as f:
             json.dump(json_conv4_a, f, indent=4, ensure_ascii=False)
     if conversations.get("conversation5") is not None:
+        os.makedirs(os.path.join(out_dir, "conversation5"), exist_ok=True)
         conversation5 = conversations["conversation5"]
         with open(f"{out_dir}/conversation5/total.json", "w", encoding="utf-8") as f:
             json.dump(conversation5, f, indent=4, ensure_ascii=False)
