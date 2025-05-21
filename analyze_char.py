@@ -11,27 +11,35 @@ class CharAnalyzer:
         self.text = text
 
     def count_emojis(self):
+        """Count the number of emojis in the text."""
         return len([c for c in self.text if c in emoji.EMOJI_DATA])
     
     def count_whitespace(self):
+        """Count the number of whitespace characters in the text."""
         return self.text.count(" ")
 
     def count_tabs(self):
+        """Count the number of tab characters in the text."""
         return self.text.count("\t")
 
     def count_newlines(self):
+        """Count the number of newline characters in the text."""
         return self.text.count("\n")
     
     def count_uppercase(self):
+        """Count the number of uppercase characters in the text."""
         return sum(1 for c in self.text if c.isupper())
     
     def count_punctuation(self):
+        """Count the number of punctuation characters in the text."""
         return sum(1 for c in self.text if c in '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~')
 
     def count_digits(self):
+        """Count the number of digit characters in the text."""
         return sum(1 for c in self.text if c.isdigit())
     
     def character_count(self):
+        """Count the total number of characters in the text."""
         return len(self.text)
     
 # ---------- Utils ----------
