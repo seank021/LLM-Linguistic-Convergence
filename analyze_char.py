@@ -5,7 +5,7 @@ import os
 import matplotlib.pyplot as plt
 
 # ---------- Character-Level Analyzer ----------
-# This class analyzes the text at the character level.
+# This module provides a class to analyze the text at the character level.
 class CharAnalyzer:
     def __init__(self, text):
         self.text = text
