@@ -242,7 +242,7 @@ if __name__ == "__main__":
     save_stats_to_file(jaccard_stats, f"{out_dir_stats}/jaccard_similarity.json")
 
     # Plots
-    draw_plots(conv1_jaccard_sim, conv2_jaccard_sim, [persona1, persona2], "jaccard_similarity_conv1", out_dir_figures, "Dialogue Turn", "Jaccard Similarity Rate") # Jaccard similarity between two personas in conv1 and conv2
+    draw_plots(conv1_jaccard_sim, conv2_jaccard_sim, [persona1, persona2], "jaccard_similarity_conv1_conv2", out_dir_figures, "Dialogue Turn", "Jaccard Similarity Rate") # Jaccard similarity between two personas in conv1 and conv2
     draw_plots(conv1_conv2_avg_jaccard_sim, conv1_conv2_avg_jaccard_sim, [persona1, persona2], "jaccard_similarity_conv1_conv2_avg", out_dir_figures, "Dialogue Turn", "Jaccard Similarity Rate") # Jaccard similarity between two personas in conv1 and conv2
     draw_plots(conv3_jaccard_sim, conv3_jaccard_sim, ["baseline1", "baseline2"], "jaccard_similarity_conv3", out_dir_figures, "Dialogue Turn", "Jaccard Similarity Rate") # Jaccard similarity between two baselines in conv3
     draw_plots(conv4_jaccard_sim, conv4_jaccard_sim, ["baseline", persona1], "jaccard_similarity_conv4", out_dir_figures, "Dialogue Turn", "Jaccard Similarity Rate") # Jaccard similarity between baseline and persona1 in conv4
