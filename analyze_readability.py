@@ -92,11 +92,11 @@ class Utils:
         plt.ylabel(ylabel)
         plt.xticks(range(len(stats1)), range(1, len(stats1) + 1))
         plt.legend()
+        plt.tight_layout()
         
         # Save the figure
         os.makedirs(output_dir, exist_ok=True) # Create directory if it doesn't exist
         file_path = os.path.join(output_dir, f"{file_name}.png")
-        plt.tight_layout()
         plt.savefig(file_path)
         plt.close()
     
@@ -217,13 +217,13 @@ if __name__ == "__main__":
         })
 
     # Save average statistics to JSON files
-    print(f"    > Saving average statistics for {conversation}...")
+    print(f"    > Saving average statistics for the average of conversation1 and conversation2...")
     output_dir_avg_statistics = f"results/statistics/{conversation_type}/readability/conversation1_2_average"
     Utils.save_stats_to_file(avg_persona1_stats, output_dir_avg_statistics, f"{persona1}")
     Utils.save_stats_to_file(avg_persona2_stats, output_dir_avg_statistics, f"{persona2}")
 
     # Draw average plots
-    print(f"    > Drawing average plots for {conversation}...")
+    print(f"    > Drawing average plots for the average of conversation1 and conversation2...")
     output_dir_avg_plots = f"results/plots/{conversation_type}/readability/conversation1_2_average"
     Utils.draw_plots([s["cli"] for s in avg_persona1_stats], [s["cli"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "cli")
     Utils.draw_plots([s["smog"] for s in avg_persona1_stats], [s["smog"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "smog")
