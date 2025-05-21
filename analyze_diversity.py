@@ -171,9 +171,6 @@ if __name__ == "__main__":
     conv2_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation2/{persona2}.json")
     avg_persona1_stats, avg_persona2_stats = {}, {}
 
-    print(conv1_persona1_stats)
-    print(conv1_persona1_stats.keys())
-
     for key in conv1_persona1_stats.keys():
         avg_persona1_stats[key] = (conv1_persona1_stats[key] + conv2_persona1_stats[key]) / 2
         avg_persona2_stats[key] = (conv1_persona2_stats[key] + conv2_persona2_stats[key]) / 2

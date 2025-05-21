@@ -29,6 +29,7 @@ pip install diversity
 pip install rouge-score
 pip install evaluate
 pip install bert_score
+pip install empath
 ```
 
 ```
