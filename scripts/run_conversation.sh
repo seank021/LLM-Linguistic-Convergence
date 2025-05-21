@@ -14,7 +14,7 @@ fi
 echo "Running LLM simulation: Model=$MODEL_PATHNAME, Persona=$PAIR_PATHNAME, Turns=$NUM_TURNS"
 
 if [ -z "$SELECTED_CONVS" ]; then
-    python3 dialogue_simulator.py $MODEL_PATHNAME $PAIR_PATHNAME $NUM_TURNS
+    python3 generate_dialogue.py $MODEL_PATHNAME $PAIR_PATHNAME $NUM_TURNS
 else
-    python3 dialogue_simulator.py $MODEL_PATHNAME $PAIR_PATHNAME $NUM_TURNS $SELECTED_CONVS
+    python3 generate_dialogue.py $MODEL_PATHNAME $PAIR_PATHNAME $NUM_TURNS $SELECTED_CONVS
 fi

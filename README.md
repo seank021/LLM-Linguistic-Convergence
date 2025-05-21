@@ -47,7 +47,7 @@ LLM-Linguistic-Convergence/
 │       └── ...
 ├── scripts/                        # Shell and Python execution scripts
 │   └── run_conversation.sh         # Shell script for automated dialogue generation
-├── dialogue_simulator.py           # Generates and runs full conversations
+├── generate_dialogue.py           # Generates and runs full conversations
 ├── venv/                           # Virtual environment   
 ├── .env                            # Stores OpenAI API key
 └── README.md                       # Project documentation

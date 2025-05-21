@@ -305,7 +305,7 @@ def save_conversation(model_name, pair_id, style_a, style_b, conversations):
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
-        print("Usage: python dialogue_simulator.py <model_pathname> <pair_pathname> <num_turns> [conv_ids]")
+        print("Usage: python generate_dialogue.py <model_pathname> <pair_pathname> <num_turns> [conv_ids]")
         sys.exit(1)
     
     model_pathname = sys.argv[1] # "gpt4o"
