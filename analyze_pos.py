@@ -1,7 +1,7 @@
 # import nltk
+# nltk.download('averaged_perceptron_tagger_eng')
 from nltk import pos_tag, word_tokenize
 from collections import Counter
-# nltk.download('averaged_perceptron_tagger_eng')
 import json
 import os
 import sys
