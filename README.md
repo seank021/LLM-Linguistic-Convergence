@@ -25,6 +25,10 @@ pip install matplotlib
 pip install nltk
 npm install hedges
 pip install emoji
+pip install diversity
+pip install rouge-score
+pip install evaluate
+pip install bert_score
 ```
 
 ```
@@ -38,32 +42,44 @@ nltk.download('words')
 ```
 LLM-Linguistic-Convergence/
 ├── configs/                        # Model and persona configuration files
-│   ├── models/ 
+│   ├── models/                  
 |       └── gpt4o.json
 │   └── personas/                   
 │       └── age_pair.json
 │       └── culture_pair.json
 │       └── thinking_style_pair.json
 |       └── tone_valence_pair.json
-│   └── hedges.json
+│   └── hedges.json                 # Hedge words list
 ├── conversations/                  # Output folder for generated dialogue data
+│   └── gpt4o_age/                  # Folder for age pair conversations
+│       └── conversation1/          # Starts with A's response to the initial prompt given in B's style
+|       └── conversation2/          # Starts with B's response to the initial prompt given in A's style
+│       └── conversation3/          # Baseline-baseline conversation (for comparison)
+│       └── conversation4/          # Baseline-style_a conversation (for comparison)
+│       └── conversation5/          # Baseline-style_b conversation (for comparison)
+│   └── gpt4o_culture/              # Folder for culture pair conversations
+│       └── ...
+│   └── gpt4o_thinking_style/       # Folder for thinking style pair conversations
+│       └── ...
+│   └── gpt4o_tone_valence/         # Folder for tone valence pair conversations
+│       └── ...
 ├── results/                        # Output folder for analyzed results
-│   └── plots/
-│   └── statistics/
+│   └── plots/                      # Folder for generated plots
+│       └── ...
+│   └── statistics/                 # Folder for generated statistics
+│       └── ...
 ├── scripts/                        # Shell and Python execution scripts
-|   └── analyze.sh
-|   └── get_hedge_list.sh
+|   └── analyze.sh                  # Shell script for running all analyses
+|   └── get_hedge_list.sh           # Shell script for getting hedge words list
 │   └── run_conversation.sh         # Shell script for automated dialogue generation
-├── analyze_char.py      
-├── analyze_diversity.py            
-├── analyze_liwc.py            
-├── analyze_pos.py      
-├── analyze_readability.py
-├── analyze_word.py                                    
+├── analyze_char.py                 # Character-Level analysis
+├── analyze_diversity.py            # Diversity analysis
+├── analyze_liwc.py                 # LIWC analysis
+├── analyze_pos.py                  # Part-of-speech analysis
+├── analyze_readability.py          # Readability analysis
+├── analyze_word.py                 # Word-Level analysis                   
 ├── generate_dialogue.py            # Generates and runs full conversations
-├── hedges.js           
-├── venv/                           # Virtual environment   
-├── .env                            # Stores OpenAI API key
+├── hedges.js                       # Gets hedge words list
 └── README.md                       # Project documentation
 ```
 
@@ -71,5 +87,5 @@ LLM-Linguistic-Convergence/
 ### 1. Conversation Generation
 - refer to `scripts/run_conversation.sh`
 ### 2. Analysis Phase
+- running `scripts/get_hedge_list.sh` is needed before anaylzing
 - refer to `scripts/analyze.sh`
-- (running `scripts/get_hedge_list.sh` is needed before this)
