@@ -33,7 +33,3 @@ echo "" # line break
 
 echo "6. Analyzing Diversity..."
 python3 analyze_diversity.py $CONV_TYPE
-
-# echo "Analyzing vocabulary..."
-# python3 vocab_analyzer.py $CONV_TYPE
-
