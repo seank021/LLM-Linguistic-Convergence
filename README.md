@@ -4,9 +4,10 @@
 LLM-Linguistic-Convergence is a framework for analyzing whether large language models (LLMs) exhibit linguistic style convergence—that is, whether they adapt to the stylistic features (e.g., tone, sentence structure, lexical choice) of their conversation partners during dialogue.
 
 This project simulates conversations between two LLM agents with distinct writing styles, observing how their language shifts over time. It supports style pairings such as:
-- Age-based (e.g., Gen Z vs. elderly)
-- Cultural (e.g., American vs. British English)
-- Interactional stance (e.g., aggressive vs. neutral)
+- Age (e.g., Gen Z vs. elderly)
+- Culture (e.g., AAVE vs. SAE)
+- Tone Valence (e.g., Polite and Positive vs. Impolite and Negative)
+- Thinking Style (e.g., Creative and Expressive vs. Analytical and Reserved)
 
 *The project can be further extended to compare LLM-based convergence with human dialogue for deeper sociolinguistic analysis.*
 
@@ -22,9 +23,13 @@ pip install openai
 pip install python-dotenv
 pip install matplotlib
 pip install nltk
+npm install hedges
+```
+
+```
 nltk.download("punkt_tab")
 nltk.download("stopwords")
-npm install hedges
+nltk.download('averaged_perceptron_tagger_eng')
 ```
 
 ## Directory Structure
@@ -36,18 +41,25 @@ LLM-Linguistic-Convergence/
 │   └── personas/                   
 │       └── age_pair.json
 │       └── culture_pair.json
-│       └── dialogue_style_pair.json
-├── conversations/                  # Output folder for generated dialogues
-│   └── gpt4o_age/                  # Subfolder per model-persona combo
-│       └── ...
+│       └── thinking_style_pair.json
+|       └── tone_valence_pair.json
+│   └── hedges.json
+├── conversations/                  # Output folder for generated dialogue data
 ├── results/                        # Output folder for analyzed results
-│   └── figures/
-│       └── ...
-│   └── stats/
-│       └── ...
+│   └── plots/
+│   └── statistics/
 ├── scripts/                        # Shell and Python execution scripts
+|   └── analyze.sh
+|   └── get_hedge_list.sh
 │   └── run_conversation.sh         # Shell script for automated dialogue generation
-├── generate_dialogue.py           # Generates and runs full conversations
+├── analyze_char.py      
+├── analyze_diversity.py            
+├── analyze_liwc.py            
+├── analyze_pos.py      
+├── analyze_readability.py
+├── analyze_word.py                                    
+├── generate_dialogue.py            # Generates and runs full conversations
+├── hedges.js           
 ├── venv/                           # Virtual environment   
 ├── .env                            # Stores OpenAI API key
 └── README.md                       # Project documentation
