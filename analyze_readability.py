@@ -45,9 +45,6 @@ class ReadabilityAnalyzer:
 # ---------- Utils ----------
 # This module provides utility functions for analysis.
 class Utils:
-    def __init__(self, text):
-        self.text = text
-
     def get_arguments():
         """Get command line arguments."""
         if len(sys.argv) != 2:

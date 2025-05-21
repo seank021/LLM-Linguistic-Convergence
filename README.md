@@ -24,6 +24,7 @@ pip install python-dotenv
 pip install matplotlib
 pip install nltk
 npm install hedges
+pip install emoji
 ```
 
 ```

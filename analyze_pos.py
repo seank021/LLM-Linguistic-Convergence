@@ -86,13 +86,10 @@ class POSAnalyzer:
 # ---------- Utils ----------
 # This module provides utility functions for analysis.
 class Utils:
-    def __init__(self, text):
-        self.text = text
-
     def get_arguments():
         """Get command line arguments."""
         if len(sys.argv) != 2:
-            print("Usage: python3 analyze_readability.py <conversation_type>")
+            print("Usage: python3 analyze_pos.py <conversation_type>")
             sys.exit(1)
         return sys.argv[1] # one of ["gpt4o_age", "gpt4o_culture", "gpt4o_tone_valence", "gpt4o_thinking_style"]
     
