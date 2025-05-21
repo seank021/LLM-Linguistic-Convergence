@@ -9,12 +9,27 @@ if [ -z "$CONV_TYPE" ]; then
 fi
 
 echo "Analyzing dialogues for conversation type: $CONV_TYPE"
+echo "" # line break
 
-echo "Analyzing sentences..."
-python3 sentence_analyzer.py $CONV_TYPE
+echo "1. Analyzing readability..."
+python3 analyze_readability.py $CONV_TYPE
+echo "" # line break
 
-echo "Analyzing vocabulary..."
-python3 vocab_analyzer.py $CONV_TYPE
+echo "2. Analyzing parts of speech..."
+python3 analyze_pos.py $CONV_TYPE
+echo "" # line break
 
-echo "Analyzing structure..."
-python3 structure_analyzer.py $CONV_TYPE
+echo "3. Analyzing character-level features..."
+python3 analyze_char.py $CONV_TYPE
+echo "" # line break
+
+echo "4. Analyzing word-level features..."
+python3 analyze_word.py $CONV_TYPE
+echo "" # line break
+
+echo "5. Analyzing diversity..."
+python3 analyze_diversity.py $CONV_TYPE
+
+# echo "Analyzing vocabulary..."
+# python3 vocab_analyzer.py $CONV_TYPE
+
