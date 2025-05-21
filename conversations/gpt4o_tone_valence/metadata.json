@@ -1,0 +1,11 @@
+{
+    "model": "gpt4o",
+    "pair_id": "tone_valence",
+    "style_a": "polite_positive",
+    "style_b": "impolite_negative",
+    "conversation1": "starts with A's response to the initial prompt given in B's style",
+    "conversation2": "starts with B's response to the initial prompt given in A's style",
+    "conversation3": "baseline-baseline conversation",
+    "conversation4": "baseline-style_a conversation",
+    "conversation5": "baseline-style_b conversation"
+}
