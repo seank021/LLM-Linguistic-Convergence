@@ -38,10 +38,6 @@ class ReadabilityAnalyzer:
         """Calculate the Automated Readability Index."""
         return textstat.automated_readability_index(self.text)
 
-    def sentence_length(self):
-        """Calculate the average number of words per sentence."""
-        return len(self.text.split())
-
 # ---------- Utils ----------
 # This module provides utility functions for analysis.
 class Utils:
@@ -139,8 +135,7 @@ if __name__ == "__main__":
                 "fkgl": analyzer1.fkgl(),
                 "fre": analyzer1.fre(),
                 "dale_chall": analyzer1.dale_chall(),
-                "ari": analyzer1.ari(),
-                "sentence_length": analyzer1.sentence_length()
+                "ari": analyzer1.ari()
             })
             # Analyze the second persona
             analyzer2 = ReadabilityAnalyzer(persona2_sentence)
@@ -153,8 +148,7 @@ if __name__ == "__main__":
                 "fkgl": analyzer2.fkgl(),
                 "fre": analyzer2.fre(),
                 "dale_chall": analyzer2.dale_chall(),
-                "ari": analyzer2.ari(),
-                "sentence_length": analyzer2.sentence_length()
+                "ari": analyzer2.ari()
             })
         
         # Save statistics to JSON files
@@ -176,7 +170,6 @@ if __name__ == "__main__":
         Utils.draw_plots([s["fre"] for s in stats1], [s["fre"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "fre")
         Utils.draw_plots([s["dale_chall"] for s in stats1], [s["dale_chall"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "dale_chall")
         Utils.draw_plots([s["ari"] for s in stats1], [s["ari"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "ari")
-        Utils.draw_plots([s["sentence_length"] for s in stats1], [s["sentence_length"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "sentence_length")
 
     # Ablation: Average of Conversation1 and Conversation2
     print("- Ablation: Analyzing the Average of Conversation1 and Conversation2...")
@@ -196,8 +189,7 @@ if __name__ == "__main__":
             "fkgl": (conv1_stats["fkgl"] + conv2_stats["fkgl"]) / 2,
             "fre": (conv1_stats["fre"] + conv2_stats["fre"]) / 2,
             "dale_chall": (conv1_stats["dale_chall"] + conv2_stats["dale_chall"]) / 2,
-            "ari": (conv1_stats["ari"] + conv2_stats["ari"]) / 2,
-            "sentence_length": (conv1_stats["sentence_length"] + conv2_stats["sentence_length"]) / 2
+            "ari": (conv1_stats["ari"] + conv2_stats["ari"]) / 2
         })
     for i, (conv1_stats, conv2_stats) in enumerate(zip(conv1_persona2_stats, conv2_persona2_stats)):
         avg_persona2_stats.append({
@@ -209,8 +201,7 @@ if __name__ == "__main__":
             "fkgl": (conv1_stats["fkgl"] + conv2_stats["fkgl"]) / 2,
             "fre": (conv1_stats["fre"] + conv2_stats["fre"]) / 2,
             "dale_chall": (conv1_stats["dale_chall"] + conv2_stats["dale_chall"]) / 2,
-            "ari": (conv1_stats["ari"] + conv2_stats["ari"]) / 2,
-            "sentence_length": (conv1_stats["sentence_length"] + conv2_stats["sentence_length"]) / 2
+            "ari": (conv1_stats["ari"] + conv2_stats["ari"]) / 2
         })
 
     # Save average statistics to JSON files
@@ -229,6 +220,5 @@ if __name__ == "__main__":
     Utils.draw_plots([s["fre"] for s in avg_persona1_stats], [s["fre"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "fre")
     Utils.draw_plots([s["dale_chall"] for s in avg_persona1_stats], [s["dale_chall"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "dale_chall")
     Utils.draw_plots([s["ari"] for s in avg_persona1_stats], [s["ari"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "ari")
-    Utils.draw_plots([s["sentence_length"] for s in avg_persona1_stats], [s["sentence_length"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "sentence_length")
 
     print(f"Finished analyzing readability for {conversation_type}. All results saved in the 'results' directory.")
