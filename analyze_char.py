@@ -39,9 +39,6 @@ class CharAnalyzer:
     def character_count(self):
         return len(self.text)
     
-    def word_count(self):
-        return len(self.text.split())
-    
 # ---------- Utils ----------
 # This module provides utility functions for analysis.
 class Utils:
@@ -140,8 +137,7 @@ if __name__ == "__main__":
                 "uppercase_count": analyzer1.count_uppercase(),
                 "punctuation_count": analyzer1.count_punctuation(),
                 "digit_count": analyzer1.count_digits(),
-                "character_count": analyzer1.character_count(),
-                "word_count": analyzer1.word_count()
+                "character_count": analyzer1.character_count()
             })
             # Analyze the second persona
             analyzer2 = CharAnalyzer(persona2_sentence)
@@ -155,8 +151,7 @@ if __name__ == "__main__":
                 "uppercase_count": analyzer2.count_uppercase(),
                 "punctuation_count": analyzer2.count_punctuation(),
                 "digit_count": analyzer2.count_digits(),
-                "character_count": analyzer2.character_count(),
-                "word_count": analyzer2.word_count()
+                "character_count": analyzer2.character_count()
             })
 
         # Save statistics to JSON files
@@ -179,7 +174,6 @@ if __name__ == "__main__":
         Utils.draw_plots([s["punctuation_count"] for s in stats1], [s["punctuation_count"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "punctuation_count")
         Utils.draw_plots([s["digit_count"] for s in stats1], [s["digit_count"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "digit_count")
         Utils.draw_plots([s["character_count"] for s in stats1], [s["character_count"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "character_count")
-        Utils.draw_plots([s["word_count"] for s in stats1], [s["word_count"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "word_count")
 
     # Ablation: Average of Conversation1 and Conversation2
     print("- Ablation: Analyzing the Average of Conversation1 and Conversation2...")
@@ -200,8 +194,7 @@ if __name__ == "__main__":
             "uppercase_count": (conv1_stats["uppercase_count"] + conv2_stats["uppercase_count"]) / 2,
             "punctuation_count": (conv1_stats["punctuation_count"] + conv2_stats["punctuation_count"]) / 2,
             "digit_count": (conv1_stats["digit_count"] + conv2_stats["digit_count"]) / 2,
-            "character_count": (conv1_stats["character_count"] + conv2_stats["character_count"]) / 2,
-            "word_count": (conv1_stats["word_count"] + conv2_stats["word_count"]) / 2
+            "character_count": (conv1_stats["character_count"] + conv2_stats["character_count"]) / 2
         })
     for i, (conv1_stats, conv2_stats) in enumerate(zip(conv1_persona2_stats, conv2_persona2_stats)):
         avg_persona2_stats.append({
@@ -214,8 +207,7 @@ if __name__ == "__main__":
             "uppercase_count": (conv1_stats["uppercase_count"] + conv2_stats["uppercase_count"]) / 2,
             "punctuation_count": (conv1_stats["punctuation_count"] + conv2_stats["punctuation_count"]) / 2,
             "digit_count": (conv1_stats["digit_count"] + conv2_stats["digit_count"]) / 2,
-            "character_count": (conv1_stats["character_count"] + conv2_stats["character_count"]) / 2,
-            "word_count": (conv1_stats["word_count"] + conv2_stats["word_count"]) / 2
+            "character_count": (conv1_stats["character_count"] + conv2_stats["character_count"]) / 2
         })
 
     # Save average statistics to JSON files
@@ -235,6 +227,5 @@ if __name__ == "__main__":
     Utils.draw_plots([s["punctuation_count"] for s in avg_persona1_stats], [s["punctuation_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "punctuation_count")
     Utils.draw_plots([s["digit_count"] for s in avg_persona1_stats], [s["digit_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "digit_count")
     Utils.draw_plots([s["character_count"] for s in avg_persona1_stats], [s["character_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "character_count")
-    Utils.draw_plots([s["word_count"] for s in avg_persona1_stats], [s["word_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "word_count")
 
     print(f"Finished analyzing character-level for {conversation_type}. All results saved in the 'results' directory.")
