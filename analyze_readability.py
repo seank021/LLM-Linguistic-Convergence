@@ -173,10 +173,10 @@ if __name__ == "__main__":
 
     # Ablation: Average of Conversation1 and Conversation2
     print("- Ablation: Analyzing the Average of Conversation1 and Conversation2...")
-    conv1_persona1_stats = Utils.load_json(f"results/statistics/gpt4o_age/readability/conversation1/{persona1}.json")
-    conv1_persona2_stats = Utils.load_json(f"results/statistics/gpt4o_age/readability/conversation1/{persona2}.json")
-    conv2_persona1_stats = Utils.load_json(f"results/statistics/gpt4o_age/readability/conversation2/{persona1}.json")
-    conv2_persona2_stats = Utils.load_json(f"results/statistics/gpt4o_age/readability/conversation2/{persona2}.json")
+    conv1_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/readability/conversation1/{persona1}.json")
+    conv1_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/readability/conversation1/{persona2}.json")
+    conv2_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/readability/conversation2/{persona1}.json")
+    conv2_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/readability/conversation2/{persona2}.json")
     avg_persona1_stats, avg_persona2_stats = [], []
 
     for i, (conv1_stats, conv2_stats) in enumerate(zip(conv1_persona1_stats, conv2_persona1_stats)):

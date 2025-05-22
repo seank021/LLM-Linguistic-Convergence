@@ -13,30 +13,48 @@ class DiversityAnalyzer:
 
     def compression_ratio(self):
         """Calculate compression ratio using gzip (lower = more redundant)."""
-        return compression_ratio(self.texts, 'gzip')
+        valid_texts = [t for t in self.texts if t.strip() != ""]
+        if not valid_texts:
+            return 0.0
+        return compression_ratio(valid_texts, 'gzip')
 
     def pos_compression_ratio(self):
         """Calculate compression ratio of POS tag sequence."""
-        pos_lists = get_pos(self.texts)
+        valid_texts = [t for t in self.texts if t.strip() != ""]
+        pos_lists = get_pos(valid_texts)
         flat_pos = list(itertools.chain.from_iterable(pos_lists))
         flat_pos = [tag if isinstance(tag, str) else 'UNK' for tag in flat_pos]
+        if not flat_pos:
+            return 0.0
         return compression_ratio(flat_pos, 'gzip')
-
+    
     def homogenization_rougel(self):
         """Calculate average ROUGE-L similarity between all sentence pairs."""
-        return homogenization_score(self.texts, 'rougel')
+        valid_texts = [t for t in self.texts if t.strip() != ""]
+        if len(valid_texts) < 2:
+            return 0.0
+        return homogenization_score(valid_texts, 'rougel')
 
     def homogenization_bertscore(self):
         """Calculate average BERTScore similarity between all sentence pairs."""
-        return homogenization_score(self.texts, 'bertscore')
+        valid_texts = [t for t in self.texts if t.strip() != ""]
+        if len(valid_texts) < 2:
+            return 0.0
+        return homogenization_score(valid_texts, 'bertscore')
 
     def self_bleu(self):
         """Calculate average BLEU score between all sentence pairs."""
-        return homogenization_score(self.texts, 'bleu')
+        valid_texts = [t for t in self.texts if t.strip() != ""]
+        if len(valid_texts) < 2:
+            return 0.0
+        return homogenization_score(valid_texts, 'bleu')
 
     def ngram_diversity(self, n=2):
         """Calculate n-gram diversity (unique n-grams / total n-grams)."""
-        return ngram_diversity_score(self.texts, n)
+        valid_texts = [t for t in self.texts if t.strip() != ""]
+        if not valid_texts:
+            return 0.0
+        return ngram_diversity_score(valid_texts, n)
     
 # ---------- Utils ----------
 # This module provides utility functions for analysis.

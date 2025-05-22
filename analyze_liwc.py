@@ -16,7 +16,14 @@ class LIWCAnalyzer:
 
     def count_empath(self, empath_lexicon, categories=None, normalize=True):
         """Run Empath and return selected category scores."""
-        full_result = empath_lexicon.analyze(self.text, normalize=normalize)
+        try:
+            full_result = empath_lexicon.analyze(self.text, normalize=normalize)
+            if full_result is None:
+                full_result = {}
+        except Exception as e:
+            print(f"[Empath Error] Failed to analyze: '{self.text}'\nError: {e}")
+            full_result = {}
+
         if categories:
             return {cat: full_result.get(cat, 0.0) for cat in categories}
         else:
