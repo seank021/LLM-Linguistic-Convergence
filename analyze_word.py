@@ -141,24 +141,29 @@ class Utils:
 # This is the main function that orchestrates the analysis.
 if __name__ == "__main__":
     conversation_type = Utils.get_arguments()
-    persona1, persona2, baseline = Utils.get_personas(conversation_type)
 
-    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5"]:
+    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5", "conversation6", "conversation7"]:
+        persona1, persona2, baseline = Utils.get_personas(conversation_type)
         print(f"- Analyzing {conversation}...")
         # Load conversation data
         print(f"    > Loading conversation data for {conversation} in {conversation_type}...")
         if conversation == "conversation1" or conversation == "conversation2":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
+            persona1, persona2 = persona1, persona2
         elif conversation == "conversation3":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{baseline}1.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}2.json"
-        elif conversation == "conversation4":
+            persona1, persona2 = baseline + "1", baseline + "2"
+        elif conversation == "conversation4" or conversation == "conversation6":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
-        else: # conversation == "conversation5"
+            persona1, persona2 = persona1, baseline
+        else: # conversation5 or conversation7
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
+            persona1, persona2 = persona2, baseline
+
         data1 = Utils.load_json(file_path1)
         data2 = Utils.load_json(file_path2)
         persona1_dialogue = Utils.json_to_list(data1)
@@ -230,8 +235,9 @@ if __name__ == "__main__":
         Utils.draw_plots([s["avg_syllables"] for s in stats1], [s["avg_syllables"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "avg_syllables")
         Utils.draw_plots([s["content_density"] for s in stats1], [s["content_density"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "content_density")
 
-    # Ablation: Average of Conversation1 and Conversation2
-    print("- Ablation: Analyzing the Average of Conversation1 and Conversation2...")
+    # Average of Conversation1 and Conversation2
+    print("- Analyzing the Average of Conversation1 and Conversation2...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[1]
     conv1_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation1/{persona1}.json")
     conv1_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation1/{persona2}.json")
     conv2_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation2/{persona1}.json")
@@ -282,6 +288,7 @@ if __name__ == "__main__":
     # Draw average plots
     print(f"    > Drawing average plots for the average of conversation1 and conversation2...")
     output_dir_avg_plots = f"results/plots/{conversation_type}/word/conversation1_2_average"
+    labels = [persona1, persona2]
     Utils.draw_plots([s["word_count"] for s in avg_persona1_stats], [s["word_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "word_count")
     Utils.draw_plots([s["hapax_legomena"] for s in avg_persona1_stats], [s["hapax_legomena"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "hapax_legomena")
     Utils.draw_plots([s["brunets_w"] for s in avg_persona1_stats], [s["brunets_w"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "brunets_w")
@@ -295,4 +302,136 @@ if __name__ == "__main__":
     Utils.draw_plots([s["avg_syllables"] for s in avg_persona1_stats], [s["avg_syllables"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "avg_syllables")
     Utils.draw_plots([s["content_density"] for s in avg_persona1_stats], [s["content_density"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "content_density")
 
+    # Average of Conversation4 and Conversation6
+    print("- Analyzing the Average of Conversation4 and Conversation6...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[2]
+    conv4_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation4/{persona1}.json")
+    conv4_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation4/{persona2}.json")
+    conv6_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation6/{persona1}.json")
+    conv6_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation6/{persona2}.json")
+    avg_persona1_stats, avg_persona2_stats = [], []
+    for i, (conv4_stats, conv6_stats) in enumerate(zip(conv4_persona1_stats, conv6_persona1_stats)):
+        avg_persona1_stats.append({
+            "sentence_index": i+1,
+            "sentence": conv4_stats["sentence"],
+            "word_count": (conv4_stats["word_count"] + conv6_stats["word_count"]) / 2,
+            "hapax_legomena": (conv4_stats["hapax_legomena"] + conv6_stats["hapax_legomena"]) / 2,
+            "brunets_w": (conv4_stats["brunets_w"] + conv6_stats["brunets_w"]) / 2,
+            "yules_k": (conv4_stats["yules_k"] + conv6_stats["yules_k"]) / 2,
+            "honores_r": (conv4_stats["honores_r"] + conv6_stats["honores_r"]) / 2,
+            "sichel_s": (conv4_stats["sichel_s"] + conv6_stats["sichel_s"]) / 2,
+            "simpsons_index": (conv4_stats["simpsons_index"] + conv6_stats["simpsons_index"]) / 2,
+            "oov_rate": (conv4_stats["oov_rate"] + conv6_stats["oov_rate"]) / 2,
+            "short_word_rate": (conv4_stats["short_word_rate"] + conv6_stats["short_word_rate"]) / 2,
+            "elongated_word_count": (conv4_stats["elongated_word_count"] + conv6_stats["elongated_word_count"]) / 2,
+            "avg_syllables": (conv4_stats["avg_syllables"] + conv6_stats["avg_syllables"]) / 2,
+            "content_density": (conv4_stats["content_density"] + conv6_stats["content_density"]) / 2
+        })
+    for i, (conv4_stats, conv6_stats) in enumerate(zip(conv4_persona2_stats, conv6_persona2_stats)):
+        avg_persona2_stats.append({
+            "sentence_index": i+1,
+            "sentence": conv4_stats["sentence"],
+            "word_count": (conv4_stats["word_count"] + conv6_stats["word_count"]) / 2,
+            "hapax_legomena": (conv4_stats["hapax_legomena"] + conv6_stats["hapax_legomena"]) / 2,
+            "brunets_w": (conv4_stats["brunets_w"] + conv6_stats["brunets_w"]) / 2,
+            "yules_k": (conv4_stats["yules_k"] + conv6_stats["yules_k"]) / 2,
+            "honores_r": (conv4_stats["honores_r"] + conv6_stats["honores_r"]) / 2,
+            "sichel_s": (conv4_stats["sichel_s"] + conv6_stats["sichel_s"]) / 2,
+            "simpsons_index": (conv4_stats["simpsons_index"] + conv6_stats["simpsons_index"]) / 2,
+            "oov_rate": (conv4_stats["oov_rate"] + conv6_stats["oov_rate"]) / 2,
+            "short_word_rate": (conv4_stats["short_word_rate"] + conv6_stats["short_word_rate"]) / 2,
+            "elongated_word_count": (conv4_stats["elongated_word_count"] + conv6_stats["elongated_word_count"]) / 2,
+            "avg_syllables": (conv4_stats["avg_syllables"] + conv6_stats["avg_syllables"]) / 2,
+            "content_density": (conv4_stats["content_density"] + conv6_stats["content_density"]) / 2
+        })
+
+    # Save average statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation4 and conversation6...")
+    output_dir_avg_statistics = f"results/statistics/{conversation_type}/word/conversation4_6_average"
+    Utils.save_stats_to_file(avg_persona1_stats, output_dir_avg_statistics, f"{persona1}")
+    Utils.save_stats_to_file(avg_persona2_stats, output_dir_avg_statistics, f"{persona2}")
+
+    # Draw average plots
+    print(f"    > Drawing average plots for the average of conversation4 and conversation6...")
+    output_dir_avg_plots = f"results/plots/{conversation_type}/word/conversation4_6_average"
+    labels = [persona1, persona2]
+    Utils.draw_plots([s["word_count"] for s in avg_persona1_stats], [s["word_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "word_count")
+    Utils.draw_plots([s["hapax_legomena"] for s in avg_persona1_stats], [s["hapax_legomena"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "hapax_legomena")
+    Utils.draw_plots([s["brunets_w"] for s in avg_persona1_stats], [s["brunets_w"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "brunets_w")
+    Utils.draw_plots([s["yules_k"] for s in avg_persona1_stats], [s["yules_k"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "yules_k")
+    Utils.draw_plots([s["honores_r"] for s in avg_persona1_stats], [s["honores_r"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "honores_r")
+    Utils.draw_plots([s["sichel_s"] for s in avg_persona1_stats], [s["sichel_s"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "sichel_s")
+    Utils.draw_plots([s["simpsons_index"] for s in avg_persona1_stats], [s["simpsons_index"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "simpsons_index")
+    Utils.draw_plots([s["oov_rate"] for s in avg_persona1_stats], [s["oov_rate"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "oov_rate")
+    Utils.draw_plots([s["short_word_rate"] for s in avg_persona1_stats], [s["short_word_rate"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "short_word_rate")
+    Utils.draw_plots([s["elongated_word_count"] for s in avg_persona1_stats], [s["elongated_word_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "elongated_word_count")
+    Utils.draw_plots([s["avg_syllables"] for s in avg_persona1_stats], [s["avg_syllables"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "avg_syllables")
+    Utils.draw_plots([s["content_density"] for s in avg_persona1_stats], [s["content_density"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "content_density")
+
+    # Average of Conversation5 and Conversation7
+    print("- Analyzing the Average of Conversation5 and Conversation7...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[1], Utils.get_personas(conversation_type)[2]
+    conv5_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation5/{persona1}.json")
+    conv5_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation5/{persona2}.json")
+    conv7_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation7/{persona1}.json")
+    conv7_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/word/conversation7/{persona2}.json")
+    avg_persona1_stats, avg_persona2_stats = [], []
+    for i, (conv5_stats, conv7_stats) in enumerate(zip(conv5_persona1_stats, conv7_persona1_stats)):
+        avg_persona1_stats.append({
+            "sentence_index": i+1,
+            "sentence": conv5_stats["sentence"],
+            "word_count": (conv5_stats["word_count"] + conv7_stats["word_count"]) / 2,
+            "hapax_legomena": (conv5_stats["hapax_legomena"] + conv7_stats["hapax_legomena"]) / 2,
+            "brunets_w": (conv5_stats["brunets_w"] + conv7_stats["brunets_w"]) / 2,
+            "yules_k": (conv5_stats["yules_k"] + conv7_stats["yules_k"]) / 2,
+            "honores_r": (conv5_stats["honores_r"] + conv7_stats["honores_r"]) / 2,
+            "sichel_s": (conv5_stats["sichel_s"] + conv7_stats["sichel_s"]) / 2,
+            "simpsons_index": (conv5_stats["simpsons_index"] + conv7_stats["simpsons_index"]) / 2,
+            "oov_rate": (conv5_stats["oov_rate"] + conv7_stats["oov_rate"]) / 2,
+            "short_word_rate": (conv5_stats["short_word_rate"] + conv7_stats["short_word_rate"]) / 2,
+            "elongated_word_count": (conv5_stats["elongated_word_count"] + conv7_stats["elongated_word_count"]) / 2,
+            "avg_syllables": (conv5_stats["avg_syllables"] + conv7_stats["avg_syllables"]) / 2,
+            "content_density": (conv5_stats["content_density"] + conv7_stats["content_density"]) / 2
+        })
+    for i, (conv5_stats, conv7_stats) in enumerate(zip(conv5_persona2_stats, conv7_persona2_stats)):
+        avg_persona2_stats.append({
+            "sentence_index": i+1,
+            "sentence": conv5_stats["sentence"],
+            "word_count": (conv5_stats["word_count"] + conv7_stats["word_count"]) / 2,
+            "hapax_legomena": (conv5_stats["hapax_legomena"] + conv7_stats["hapax_legomena"]) / 2,
+            "brunets_w": (conv5_stats["brunets_w"] + conv7_stats["brunets_w"]) / 2,
+            "yules_k": (conv5_stats["yules_k"] + conv7_stats["yules_k"]) / 2,
+            "honores_r": (conv5_stats["honores_r"] + conv7_stats["honores_r"]) / 2,
+            "sichel_s": (conv5_stats["sichel_s"] + conv7_stats["sichel_s"]) / 2,
+            "simpsons_index": (conv5_stats["simpsons_index"] + conv7_stats["simpsons_index"]) / 2,
+            "oov_rate": (conv5_stats["oov_rate"] + conv7_stats["oov_rate"]) / 2,
+            "short_word_rate": (conv5_stats["short_word_rate"] + conv7_stats["short_word_rate"]) / 2,
+            "elongated_word_count": (conv5_stats["elongated_word_count"] + conv7_stats["elongated_word_count"]) / 2,
+            "avg_syllables": (conv5_stats["avg_syllables"] + conv7_stats["avg_syllables"]) / 2,
+            "content_density": (conv5_stats["content_density"] + conv7_stats["content_density"]) / 2
+        })
+
+    # Save average statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation5 and conversation7...")
+    output_dir_avg_statistics = f"results/statistics/{conversation_type}/word/conversation5_7_average"
+    Utils.save_stats_to_file(avg_persona1_stats, output_dir_avg_statistics, f"{persona1}")
+    Utils.save_stats_to_file(avg_persona2_stats, output_dir_avg_statistics, f"{persona2}")
+
+    # Draw average plots
+    print(f"    > Drawing average plots for the average of conversation5 and conversation7...")
+    output_dir_avg_plots = f"results/plots/{conversation_type}/word/conversation5_7_average"
+    labels = [persona1, persona2]
+    Utils.draw_plots([s["word_count"] for s in avg_persona1_stats], [s["word_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "word_count")
+    Utils.draw_plots([s["hapax_legomena"] for s in avg_persona1_stats], [s["hapax_legomena"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "hapax_legomena")
+    Utils.draw_plots([s["brunets_w"] for s in avg_persona1_stats], [s["brunets_w"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "brunets_w")
+    Utils.draw_plots([s["yules_k"] for s in avg_persona1_stats], [s["yules_k"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "yules_k")
+    Utils.draw_plots([s["honores_r"] for s in avg_persona1_stats], [s["honores_r"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "honores_r")
+    Utils.draw_plots([s["sichel_s"] for s in avg_persona1_stats], [s["sichel_s"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "sichel_s")
+    Utils.draw_plots([s["simpsons_index"] for s in avg_persona1_stats], [s["simpsons_index"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "simpsons_index")
+    Utils.draw_plots([s["oov_rate"] for s in avg_persona1_stats], [s["oov_rate"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "oov_rate")
+    Utils.draw_plots([s["short_word_rate"] for s in avg_persona1_stats], [s["short_word_rate"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "short_word_rate")
+    Utils.draw_plots([s["elongated_word_count"] for s in avg_persona1_stats], [s["elongated_word_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "elongated_word_count")
+    Utils.draw_plots([s["avg_syllables"] for s in avg_persona1_stats], [s["avg_syllables"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "avg_syllables")
+    Utils.draw_plots([s["content_density"] for s in avg_persona1_stats], [s["content_density"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "content_density")
+    
     print(f"Finished analyzing word-level for {conversation_type}. All results saved in the 'results' directory.")
