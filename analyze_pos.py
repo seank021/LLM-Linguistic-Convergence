@@ -195,24 +195,29 @@ class Utils:
 # This is the main function that orchestrates the analysis.
 if __name__ == "__main__":
     conversation_type = Utils.get_arguments()
-    persona1, persona2, baseline = Utils.get_personas(conversation_type)
 
-    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5"]:
+    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5", "conversation6", "conversation7"]:
+        persona1, persona2, baseline = Utils.get_personas(conversation_type)
         print(f"- Analyzing {conversation}...")
         # Load conversation data
         print(f"    > Loading conversation data for {conversation} in {conversation_type}...")
         if conversation == "conversation1" or conversation == "conversation2":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
+            persona1, persona2 = persona1, persona2
         elif conversation == "conversation3":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{baseline}1.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}2.json"
-        elif conversation == "conversation4":
+            persona1, persona2 = baseline + "1", baseline + "2"
+        elif conversation == "conversation4" or conversation == "conversation6":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
-        else: # conversation == "conversation5"
+            persona1, persona2 = persona1, baseline
+        else: # conversation5 or conversation7
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
+            persona1, persona2 = persona2, baseline
+
         data1 = Utils.load_json(file_path1)
         data2 = Utils.load_json(file_path2)
         persona1_dialogue = Utils.json_to_list(data1)
@@ -303,8 +308,9 @@ if __name__ == "__main__":
                 file_name=f"count_{tag}"
             )
 
-    # Ablation: Average of Conversation1 and Conversation2
-    print("- Ablation: Analyzing the Average of Conversation1 and Conversation2 (POS)...")
+    # Average of Conversation1 and Conversation2
+    print("- Analyzing the Average of Conversation1 and Conversation2 (POS)...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[1]
     conv1_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation1/{persona1}.json")
     conv1_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation1/{persona2}.json")
     conv2_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation2/{persona1}.json")
@@ -375,4 +381,150 @@ if __name__ == "__main__":
             file_name=f"count_{tag}"
         )
     
+    # Average of Conversation4 and Conversation6
+    print("- Analyzing the Average of Conversation4 and Conversation6 (POS)...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[2]
+    conv4_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation4/{persona1}.json")
+    conv4_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation4/{persona2}.json")
+    conv6_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation6/{persona1}.json")
+    conv6_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation6/{persona2}.json")
+
+    # Average statistics
+    averaged_stats1 = POSAnalyzer.average_pos_stats(conv4_persona1_stats, conv6_persona1_stats)
+    averaged_stats2 = POSAnalyzer.average_pos_stats(conv4_persona2_stats, conv6_persona2_stats)
+
+    # Saving statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation4 and conversation6...")
+    output_dir_statistics = f"results/statistics/{conversation_type}/pos/conversation4_6_average"
+    Utils.save_stats_to_file(averaged_stats1, output_dir_statistics, f"{persona1}")
+    Utils.save_stats_to_file(averaged_stats2, output_dir_statistics, f"{persona2}")
+
+    # Draw plots
+    print(f"    > Drawing plots for the average of conversation4 and conversation6...")
+    output_dir_plots = f"results/plots/{conversation_type}/pos/conversation4_6_average/"
+    labels = [persona1, persona2]
+    xlabel = "Sentence Index"
+    ylabel = "POS Count"
+    Utils.draw_bar_chart(
+        Utils.sum_counter(averaged_stats1, "pos_counts"),
+        Utils.sum_counter(averaged_stats2, "pos_counts"),
+        labels,
+        "POS Tag",
+        "Frequency",
+        output_dir_plots,
+        f"counts"
+    )
+    Utils.draw_bar_chart(
+        Utils.sum_counter(averaged_stats1, "most_common_bigrams"),
+        Utils.sum_counter(averaged_stats2, "most_common_bigrams"),
+        labels,
+        "POS Bigram",
+        "Frequency",
+        output_dir_plots,
+        f"bigrams"
+    )
+    Utils.draw_bar_chart(
+        Utils.sum_counter(averaged_stats1, "most_common_trigrams"),
+        Utils.sum_counter(averaged_stats2, "most_common_trigrams"),
+        labels,
+        "POS Trigram",
+        "Frequency",
+        output_dir_plots,
+        f"trigrams"
+    )
+
+    # Save turnwise POS table (csv)
+    print(f"    > Saving turnwise POS table in CSV format for the average of conversation4 and conversation6...")
+    output_dir_turnwise = f"results/statistics/{conversation_type}/pos/conversation4_6_average/"
+    Utils.save_turnwise_pos_table(averaged_stats1, persona1, output_dir_turnwise)
+    Utils.save_turnwise_pos_table(averaged_stats2, persona2, output_dir_turnwise)
+
+    # Draw plots for specific tags
+    print(f"    > Drawing plots for specific POS tags for the average of conversation4 and conversation6...")
+    output_dir_plots = f"results/plots/{conversation_type}/pos/conversation4_6_average/specific_tags/"
+    for tag in default_pos_tags:
+        s1 = Utils.extract_series(averaged_stats1, tag)
+        s2 = Utils.extract_series(averaged_stats2, tag)
+        Utils.draw_plots(
+            s1, s2,
+            labels,
+            xlabel="Sentence Index",
+            ylabel=f"{tag} Count",
+            output_dir=output_dir_plots,
+            file_name=f"count_{tag}"
+        )
+
+    # Average of Conversation5 and Conversation7
+    print("- Analyzing the Average of Conversation5 and Conversation7 (POS)...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[1], Utils.get_personas(conversation_type)[2]
+    conv5_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation5/{persona1}.json")
+    conv5_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation5/{persona2}.json")
+    conv7_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation7/{persona1}.json")
+    conv7_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/pos/conversation7/{persona2}.json")
+
+    # Average statistics
+    averaged_stats1 = POSAnalyzer.average_pos_stats(conv5_persona1_stats, conv7_persona1_stats)
+    averaged_stats2 = POSAnalyzer.average_pos_stats(conv5_persona2_stats, conv7_persona2_stats)
+
+    # Saving statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation5 and conversation7...")
+    output_dir_statistics = f"results/statistics/{conversation_type}/pos/conversation5_7_average"
+    Utils.save_stats_to_file(averaged_stats1, output_dir_statistics, f"{persona1}")
+    Utils.save_stats_to_file(averaged_stats2, output_dir_statistics, f"{persona2}")
+
+    # Draw plots
+    print(f"    > Drawing plots for the average of conversation5 and conversation7...")
+    output_dir_plots = f"results/plots/{conversation_type}/pos/conversation5_7_average/"
+    labels = [persona1, persona2]
+    xlabel = "Sentence Index"
+    ylabel = "POS Count"
+    Utils.draw_bar_chart(
+        Utils.sum_counter(averaged_stats1, "pos_counts"),
+        Utils.sum_counter(averaged_stats2, "pos_counts"),
+        labels,
+        "POS Tag",
+        "Frequency",
+        output_dir_plots,
+        f"counts"
+    )
+    Utils.draw_bar_chart(
+        Utils.sum_counter(averaged_stats1, "most_common_bigrams"),
+        Utils.sum_counter(averaged_stats2, "most_common_bigrams"),
+        labels,
+        "POS Bigram",
+        "Frequency",
+        output_dir_plots,
+        f"bigrams"
+    )
+    Utils.draw_bar_chart(
+        Utils.sum_counter(averaged_stats1, "most_common_trigrams"),
+        Utils.sum_counter(averaged_stats2, "most_common_trigrams"),
+        labels,
+        "POS Trigram",
+        "Frequency",
+        output_dir_plots,
+        f"trigrams"
+    )
+
+    # Save turnwise POS table (csv)
+    print(f"    > Saving turnwise POS table in CSV format for the average of conversation5 and conversation7...")
+    output_dir_turnwise = f"results/statistics/{conversation_type}/pos/conversation5_7_average/"
+    Utils.save_turnwise_pos_table(averaged_stats1, persona1, output_dir_turnwise)
+    Utils.save_turnwise_pos_table(averaged_stats2, persona2, output_dir_turnwise)
+
+    # Draw plots for specific tags
+    print(f"    > Drawing plots for specific POS tags for the average of conversation5 and conversation7...")
+    output_dir_plots = f"results/plots/{conversation_type}/pos/conversation5_7_average/specific_tags/"
+    for tag in default_pos_tags:
+        s1 = Utils.extract_series(averaged_stats1, tag)
+        s2 = Utils.extract_series(averaged_stats2, tag)
+        Utils.draw_plots(
+            s1, s2,
+            labels,
+            xlabel="Sentence Index",
+            ylabel=f"{tag} Count",
+            output_dir=output_dir_plots,
+            file_name=f"count_{tag}"
+        )
+
     print(f"Finished analyzing pos for {conversation_type}. All results saved in the 'results' directory.")
