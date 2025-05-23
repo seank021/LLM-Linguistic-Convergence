@@ -101,24 +101,29 @@ class Utils:
 # This is the main function that orchestrates the analysis.
 if __name__ == "__main__":
     conversation_type = Utils.get_arguments()
-    persona1, persona2, baseline = Utils.get_personas(conversation_type)
 
-    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5"]:
+    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5", "conversation6", "conversation7"]:
+        persona1, persona2, baseline = Utils.get_personas(conversation_type)
         print(f"- Analyzing {conversation}...")
         # Load conversation data
         print(f"    > Loading conversation data for {conversation} in {conversation_type}...")
         if conversation == "conversation1" or conversation == "conversation2":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
+            persona1, persona2 = persona1, persona2
         elif conversation == "conversation3":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{baseline}1.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}2.json"
-        elif conversation == "conversation4":
+            persona1, persona2 = baseline + "1", baseline + "2"
+        elif conversation == "conversation4" or conversation == "conversation6":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
-        else: # conversation == "conversation5"
+            persona1, persona2 = persona1, baseline
+        else: # conversation5 or conversation7
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
+            persona1, persona2 = persona2, baseline
+            
         data1 = Utils.load_json(file_path1)
         data2 = Utils.load_json(file_path2)
         persona1_dialogue = Utils.json_to_list(data1)
@@ -178,8 +183,9 @@ if __name__ == "__main__":
         Utils.draw_plots([s["digit_count"] for s in stats1], [s["digit_count"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "digit_count")
         Utils.draw_plots([s["character_count"] for s in stats1], [s["character_count"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "character_count")
 
-    # Ablation: Average of Conversation1 and Conversation2
-    print("- Ablation: Analyzing the Average of Conversation1 and Conversation2...")
+    # Average of Conversation1 and Conversation2
+    print("- Analyzing the Average of Conversation1 and Conversation2...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[1]
     conv1_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation1/{persona1}.json")
     conv1_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation1/{persona2}.json")
     conv2_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation2/{persona1}.json")
@@ -222,6 +228,115 @@ if __name__ == "__main__":
     # Draw average plots
     print(f"    > Drawing average plots for the average of conversation1 and conversation2...")
     output_dir_avg_plots = f"results/plots/{conversation_type}/char/conversation1_2_average"
+    labels = [persona1, persona2]
+    Utils.draw_plots([s["emoji_count"] for s in avg_persona1_stats], [s["emoji_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "emoji_count")
+    Utils.draw_plots([s["whitespace_count"] for s in avg_persona1_stats], [s["whitespace_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "whitespace_count")
+    Utils.draw_plots([s["tab_count"] for s in avg_persona1_stats], [s["tab_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "tab_count")
+    Utils.draw_plots([s["newline_count"] for s in avg_persona1_stats], [s["newline_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "newline_count")
+    Utils.draw_plots([s["uppercase_count"] for s in avg_persona1_stats], [s["uppercase_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "uppercase_count")
+    Utils.draw_plots([s["punctuation_count"] for s in avg_persona1_stats], [s["punctuation_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "punctuation_count")
+    Utils.draw_plots([s["digit_count"] for s in avg_persona1_stats], [s["digit_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "digit_count")
+    Utils.draw_plots([s["character_count"] for s in avg_persona1_stats], [s["character_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "character_count")
+
+    # Average of Conversation4 and Conversation6
+    print("- Analyzing the Average of Conversation4 and Conversation6...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[2]
+    conv1_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation4/{persona1}.json")
+    conv1_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation4/{persona2}.json")
+    conv2_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation6/{persona1}.json")
+    conv2_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation6/{persona2}.json")
+    avg_persona1_stats, avg_persona2_stats = [], []
+    for i, (conv1_stats, conv2_stats) in enumerate(zip(conv1_persona1_stats, conv2_persona1_stats)):
+        avg_persona1_stats.append({
+            "sentence_index": i+1,
+            "sentence": conv1_stats["sentence"],
+            "emoji_count": (conv1_stats["emoji_count"] + conv2_stats["emoji_count"]) / 2,
+            "whitespace_count": (conv1_stats["whitespace_count"] + conv2_stats["whitespace_count"]) / 2,
+            "tab_count": (conv1_stats["tab_count"] + conv2_stats["tab_count"]) / 2,
+            "newline_count": (conv1_stats["newline_count"] + conv2_stats["newline_count"]) / 2,
+            "uppercase_count": (conv1_stats["uppercase_count"] + conv2_stats["uppercase_count"]) / 2,
+            "punctuation_count": (conv1_stats["punctuation_count"] + conv2_stats["punctuation_count"]) / 2,
+            "digit_count": (conv1_stats["digit_count"] + conv2_stats["digit_count"]) / 2,
+            "character_count": (conv1_stats["character_count"] + conv2_stats["character_count"]) / 2
+        })
+    for i, (conv1_stats, conv2_stats) in enumerate(zip(conv1_persona2_stats, conv2_persona2_stats)):
+        avg_persona2_stats.append({
+            "sentence_index": i+1,
+            "sentence": conv1_stats["sentence"],
+            "emoji_count": (conv1_stats["emoji_count"] + conv2_stats["emoji_count"]) / 2,
+            "whitespace_count": (conv1_stats["whitespace_count"] + conv2_stats["whitespace_count"]) / 2,
+            "tab_count": (conv1_stats["tab_count"] + conv2_stats["tab_count"]) / 2,
+            "newline_count": (conv1_stats["newline_count"] + conv2_stats["newline_count"]) / 2,
+            "uppercase_count": (conv1_stats["uppercase_count"] + conv2_stats["uppercase_count"]) / 2,
+            "punctuation_count": (conv1_stats["punctuation_count"] + conv2_stats["punctuation_count"]) / 2,
+            "digit_count": (conv1_stats["digit_count"] + conv2_stats["digit_count"]) / 2,
+            "character_count": (conv1_stats["character_count"] + conv2_stats["character_count"]) / 2
+        })
+
+    # Save average statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation4 and conversation6...")
+    output_dir_avg_statistics = f"results/statistics/{conversation_type}/char/conversation4_6_average"
+    Utils.save_stats_to_file(avg_persona1_stats, output_dir_avg_statistics, f"{persona1}")
+    Utils.save_stats_to_file(avg_persona2_stats, output_dir_avg_statistics, f"{persona2}")
+    
+    # Draw average plots
+    print(f"    > Drawing average plots for the average of conversation4 and conversation6...")
+    output_dir_avg_plots = f"results/plots/{conversation_type}/char/conversation4_6_average"
+    labels = [persona1, persona2]
+    Utils.draw_plots([s["emoji_count"] for s in avg_persona1_stats], [s["emoji_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "emoji_count")
+    Utils.draw_plots([s["whitespace_count"] for s in avg_persona1_stats], [s["whitespace_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "whitespace_count")
+    Utils.draw_plots([s["tab_count"] for s in avg_persona1_stats], [s["tab_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "tab_count")
+    Utils.draw_plots([s["newline_count"] for s in avg_persona1_stats], [s["newline_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "newline_count")
+    Utils.draw_plots([s["uppercase_count"] for s in avg_persona1_stats], [s["uppercase_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "uppercase_count")
+    Utils.draw_plots([s["punctuation_count"] for s in avg_persona1_stats], [s["punctuation_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "punctuation_count")
+    Utils.draw_plots([s["digit_count"] for s in avg_persona1_stats], [s["digit_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "digit_count")
+    Utils.draw_plots([s["character_count"] for s in avg_persona1_stats], [s["character_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "character_count")
+
+    # Average of Conversation5 and Conversation7
+    print("- Analyzing the Average of Conversation5 and Conversation7...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[1], Utils.get_personas(conversation_type)[2]
+    conv1_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation5/{persona1}.json")
+    conv1_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation5/{persona2}.json")
+    conv2_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation7/{persona1}.json")
+    conv2_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/char/conversation7/{persona2}.json")
+    avg_persona1_stats, avg_persona2_stats = [], []
+    for i, (conv1_stats, conv2_stats) in enumerate(zip(conv1_persona1_stats, conv2_persona1_stats)):
+        avg_persona1_stats.append({
+            "sentence_index": i+1,
+            "sentence": conv1_stats["sentence"],
+            "emoji_count": (conv1_stats["emoji_count"] + conv2_stats["emoji_count"]) / 2,
+            "whitespace_count": (conv1_stats["whitespace_count"] + conv2_stats["whitespace_count"]) / 2,
+            "tab_count": (conv1_stats["tab_count"] + conv2_stats["tab_count"]) / 2,
+            "newline_count": (conv1_stats["newline_count"] + conv2_stats["newline_count"]) / 2,
+            "uppercase_count": (conv1_stats["uppercase_count"] + conv2_stats["uppercase_count"]) / 2,
+            "punctuation_count": (conv1_stats["punctuation_count"] + conv2_stats["punctuation_count"]) / 2,
+            "digit_count": (conv1_stats["digit_count"] + conv2_stats["digit_count"]) / 2,
+            "character_count": (conv1_stats["character_count"] + conv2_stats["character_count"]) / 2
+        })
+    for i, (conv1_stats, conv2_stats) in enumerate(zip(conv1_persona2_stats, conv2_persona2_stats)):
+        avg_persona2_stats.append({
+            "sentence_index": i+1,
+            "sentence": conv1_stats["sentence"],
+            "emoji_count": (conv1_stats["emoji_count"] + conv2_stats["emoji_count"]) / 2,
+            "whitespace_count": (conv1_stats["whitespace_count"] + conv2_stats["whitespace_count"]) / 2,
+            "tab_count": (conv1_stats["tab_count"] + conv2_stats["tab_count"]) / 2,
+            "newline_count": (conv1_stats["newline_count"] + conv2_stats["newline_count"]) / 2,
+            "uppercase_count": (conv1_stats["uppercase_count"] + conv2_stats["uppercase_count"]) / 2,
+            "punctuation_count": (conv1_stats["punctuation_count"] + conv2_stats["punctuation_count"]) / 2,
+            "digit_count": (conv1_stats["digit_count"] + conv2_stats["digit_count"]) / 2,
+            "character_count": (conv1_stats["character_count"] + conv2_stats["character_count"]) / 2
+        })
+
+    # Save average statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation5 and conversation7...")
+    output_dir_avg_statistics = f"results/statistics/{conversation_type}/char/conversation5_7_average"
+    Utils.save_stats_to_file(avg_persona1_stats, output_dir_avg_statistics, f"{persona1}")
+    Utils.save_stats_to_file(avg_persona2_stats, output_dir_avg_statistics, f"{persona2}")
+
+    # Draw average plots
+    print(f"    > Drawing average plots for the average of conversation5 and conversation7...")
+    output_dir_avg_plots = f"results/plots/{conversation_type}/char/conversation5_7_average"
+    labels = [persona1, persona2]
     Utils.draw_plots([s["emoji_count"] for s in avg_persona1_stats], [s["emoji_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "emoji_count")
     Utils.draw_plots([s["whitespace_count"] for s in avg_persona1_stats], [s["whitespace_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "whitespace_count")
     Utils.draw_plots([s["tab_count"] for s in avg_persona1_stats], [s["tab_count"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "tab_count")
