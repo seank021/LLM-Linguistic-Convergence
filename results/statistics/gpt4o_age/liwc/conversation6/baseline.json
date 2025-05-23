@@ -1,0 +1,802 @@
+[
+    {
+        "sentence_index": 1,
+        "empath": {
+            "positive_emotion": 0.012048192771084338,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "I see where you're coming from! Using \"sir\" and \"ma'am\" can feel outdated, especially in a world that's moving towards more casual and inclusive forms of address. It can also sometimes create an unnecessary barrier or formality that isn't needed. On the other hand, some people appreciate the respect these terms convey. It's definitely interesting to see how language evolves with our society's values. Do you think we need new terms to replace them, or should we just stick with using names directly?",
+        "hedge": 3
+    },
+    {
+        "sentence_index": 2,
+        "empath": {
+            "positive_emotion": 0.013333333333333334,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "I totally get what you mean! Using names or nicknames makes interactions feel more personal and less stiff. Plus, \"dude\" has this friendly vibe that fits a lot of situations. 😂 Some people are also trying out things like \"friend\" or even just using \"hey\" to keep it neutral and casual. What do you think about adding some creativity with unique nicknames tailored to each person, or is sticking with 'dude' the way to go?",
+        "hedge": 2
+    },
+    {
+        "sentence_index": 3,
+        "empath": {
+            "positive_emotion": 0.01818181818181818,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.01818181818181818,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Haha, I love the idea of spicing things up with nicknames like \"Legend\" or \"Champ\" — it definitely brings a fun vibe to conversations! As for me, I'm cool with being called anything that makes the chat lively. What about you? Got any nickname preferences or one you've been called that's stuck with you? 😄",
+        "hedge": 2
+    },
+    {
+        "sentence_index": 4,
+        "empath": {
+            "positive_emotion": 0.0196078431372549,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0196078431372549,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Honestly, I think any nickname that comes from a genuine place is awesome! It could be something as simple as \"Ace\" or even something quirky and unexpected. 😄 It's all about the memories and connections they bring. Have you ever been given a nickname that just felt perfect or totally hilarious?",
+        "hedge": 4
+    },
+    {
+        "sentence_index": 5,
+        "empath": {
+            "positive_emotion": 0.016666666666666666,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.016666666666666666,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Absolutely, those genuine nicknames always seem to stick in the best way. I've heard people get nicknames like \"Professor\" for being the smart one in the group or \"Giggles\" if they laugh a lot. It's all about capturing that unique trait! How about you? Have you ever been given a nickname that totally nailed your vibe or cracked everyone up?",
+        "hedge": 3
+    },
+    {
+        "sentence_index": 6,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "For sure! It's always fun when a nickname captures something special about you. I've heard people get nicknames like \"Sunshine\" if they’re super positive, or even something like \"Whiz\" for being quick on their feet. Have you ever gotten a nickname that felt just right or one that always brings back funny memories?",
+        "hedge": 6
+    },
+    {
+        "sentence_index": 7,
+        "empath": {
+            "positive_emotion": 0.015384615384615385,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "I've heard some pretty entertaining ones over the years! There was one time a friend called me \"Detective\" because I always seem to find out random trivia or details that others miss. It became kind of a running joke, and it still makes me smile. Do you have any nickname stories like that? Something that's stuck around for the laughs or just felt spot on?",
+        "hedge": 7
+    },
+    {
+        "sentence_index": 8,
+        "empath": {
+            "positive_emotion": 0.013513513513513514,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "That's a great nickname story! \"Detective\" definitely has a fun ring to it and sounds like it came from something unique about you. For me, I’ve had friends call me “Navigator” because I’m oddly good with directions, even without GPS. It always sparks some laughs whenever we’re on road trips or trying to find our way around somewhere new. How about your friends — do they have any quirky nicknames that tell funny stories?",
+        "hedge": 7
+    },
+    {
+        "sentence_index": 9,
+        "empath": {
+            "positive_emotion": 0.015625,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "\"Navigator\" sounds like a really useful nickname to have, especially on adventures! Among my friends, there’s one we call \"Chef\" because they can whip up an amazing meal from just about anything in the fridge. It always amazes us, and it's become a fun inside joke whenever we're planning gatherings. Do you find that certain nicknames help shape the dynamic within your friend group?",
+        "hedge": 5
+    },
+    {
+        "sentence_index": 10,
+        "empath": {
+            "positive_emotion": 0.03389830508474576,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Absolutely, nicknames definitely add a unique layer to friendships. They can highlight people's quirks or talents, making everyone feel seen and appreciated in their own way. Plus, they often lead to inside jokes that only strengthen the group's bond over time. Do you think nicknames have influenced how roles are divided in your friend group during events or trips?",
+        "hedge": 3
+    },
+    {
+        "sentence_index": 11,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Definitely! Nicknames often reflect what someone is naturally good at, which can make it easier to delegate roles during events or trips. For example, \"Navigator\" would likely be in charge of directions, while \"Chef\" might handle meal planning. It's almost like these nicknames become unofficial titles that play into everyone's strengths and help everything run more smoothly. Have you noticed any particular nickname-based roles emerge in your group?",
+        "hedge": 8
+    },
+    {
+        "sentence_index": 12,
+        "empath": {
+            "positive_emotion": 0.013333333333333334,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Yes, for sure! In my group, we have a friend nicknamed \"DJ\" because they always curate the perfect playlist no matter the occasion. Whenever we're hosting a party or on a road trip, they're automatically in charge of the music, and it really sets the vibe. It's like everyone has their little domain where they shine best. Have you ever had a situation where someone's nickname perfectly predicted how they'd step up to help out?",
+        "hedge": 5
+    },
+    {
+        "sentence_index": 13,
+        "empath": {
+            "positive_emotion": 0.011363636363636364,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Absolutely, there's a friend we call \"Tech Guru\" because they can fix just about any gadget or solve any tech issue we run into. During our last trip, when the Airbnb's Wi-Fi was acting up, they immediately jumped in to sort it out without anyone even having to ask. It was like their nickname predicted exactly how they'd come through in that moment! It's awesome how these roles become second nature. Has there been a time when your group's dynamic really impressed you during an event or outing?",
+        "hedge": 2
+    },
+    {
+        "sentence_index": 14,
+        "empath": {
+            "positive_emotion": 0.01834862385321101,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Yes, there was this one camping trip where our group's dynamic really shone. We have a friend known as \"Scout\" because they’re always prepared for outdoor adventures. They came with all sorts of gear and even managed to set up camp in record time. Meanwhile, another friend we call \"Firestarter\" got the fire going quickly despite the damp conditions. It was impressive how everyone just naturally fell into their roles and made everything run smoothly. It's these kinds of moments that make you appreciate each person's unique contributions even more. Have you ever been on an outing where things didn't go as planned but your group still pulled through?",
+        "hedge": 2
+    },
+    {
+        "sentence_index": 15,
+        "empath": {
+            "positive_emotion": 0.02459016393442623,
+            "negative_emotion": 0.00819672131147541,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Yes, I remember this hiking trip where we got caught in a sudden rainstorm. It was one of those times when everything seemed to be going wrong — our maps were getting soaked, and the path became super muddy. But thankfully, our \"Navigator\" friend was able to find an alternate route using their phone's GPS before it completely ran out of battery. Meanwhile, another friend known as \"Pack Mule\" carried extra tarps and rain gear for everyone, so we all managed to stay relatively dry. Despite the chaos, we actually ended up having a lot of fun just because everyone worked together so well. Have you ever had an unexpected adventure with your group that turned into a great story later on?",
+        "hedge": 3
+    },
+    {
+        "sentence_index": 16,
+        "empath": {
+            "positive_emotion": 0.007194244604316547,
+            "negative_emotion": 0.007194244604316547,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.007194244604316547,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1,
+        "pronoun_2nd": 0,
+        "negation": 2,
+        "sentence": "Oh, definitely! There was a road trip we took where our car unexpectedly broke down in the middle of nowhere. At first, it seemed like a disaster because we were miles from the nearest town and none of us were particularly skilled with car repairs. But then \"MacGyver,\" one of our friends who’s really handy with just about anything, managed to jury-rig a temporary fix using duct tape and some random tools they found in the trunk. While waiting for assistance, another friend dubbed \"Chef\" whipped up some snacks with whatever we had on hand, turning what could have been a miserable wait into an impromptu picnic by the roadside. It became one of those unforgettable adventures that everyone looks back on fondly now. Have you ever experienced something similar where everything went wrong but still turned out great?",
+        "hedge": 7
+    },
+    {
+        "sentence_index": 17,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Yes, for sure! There was a weekend getaway we planned at a cabin in the mountains. Everything seemed perfect until we realized the power was out due to a storm. Initially, it felt like our plans were ruined since there was no electricity or heating. But then \"Scout,\" our go-to person for outdoor skills, suggested using the opportunity to go old-school and make it an adventure. We gathered around the fireplace with blankets and flashlights, telling stories and playing games all night. Someone even started calling us \"Pioneers\" as a joke because of how we made do without modern conveniences. It turned into one of those memorable nights that everyone still talks about fondly. Have you ever had an unexpected challenge turn into something unexpectedly fun or memorable?",
+        "hedge": 6
+    },
+    {
+        "sentence_index": 18,
+        "empath": {
+            "positive_emotion": 0.01639344262295082,
+            "negative_emotion": 0.00819672131147541,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Yes, definitely! There was this time when we planned a beach day and everything seemed perfect until we arrived to find out the entire area was closed due to an unexpected event. At first, we were disappointed since we'd been looking forward to it for weeks. But \"Navigator,\" who always has backup plans, suggested heading over to a nearby lake instead. We ended up finding a secluded spot that was even better than our original destination. With \"DJ\" providing the tunes from their portable speaker and everyone just going with the flow, it turned into one of those spontaneous adventures that felt like pure summer magic. Have you ever had your backup plan turn out even better than what you initially intended?",
+        "hedge": 6
+    },
+    {
+        "sentence_index": 19,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.009174311926605505,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 1,
+        "sentence": "Yes, that's happened to me! We had planned a day at this popular tourist spot, but when we got there, it was unbelievably crowded. On a whim, \"Adventurer,\" who's always eager to explore the unbeaten path, suggested checking out a nearby area we'd never heard of before. It turned out to be this charming little village with quaint shops and amazing local food that wasn’t in any guidebook. We spent the whole day wandering around and ended up having one of the best experiences of our trip. Those unexpected discoveries often end up being the highlight! Have you ever stumbled upon something awesome purely by accident during your travels?",
+        "hedge": 6
+    },
+    {
+        "sentence_index": 20,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.009259259259259259,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 2,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Yes, I have! There was this one time when we got lost while trying to find a hiking trail. Instead of turning back, \"Explorer\" in our group suggested we just follow a random path to see where it led us. We ended up finding a secluded waterfall that wasn't marked on any map. It was stunning and completely empty except for us, like our own little secret spot. We spent the afternoon swimming and relaxing there — it felt like something straight out of an adventure novel. Those serendipitous moments can really make a trip unforgettable! Have you ever had an accidental detour lead to something unexpectedly amazing?",
+        "hedge": 8
+    },
+    {
+        "sentence_index": 21,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 2,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Absolutely! On a backpacking trip through Europe, we were on a train that got delayed for hours. Initially, it seemed like a total bummer, but \"Social Butterfly\" in our group started chatting with fellow travelers in the same predicament. We ended up making friends with some locals who invited us to join them for dinner at this hidden gem of a restaurant. Not only was the food incredible, but they also showed us around their favorite spots in town over the next couple of days. It turned what could have been an annoying delay into one of the best parts of our trip. Those random connections really add something special to your adventures! Have you ever had any spontaneous encounters like that turn into memorable experiences?",
+        "hedge": 8
+    },
+    {
+        "sentence_index": 22,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 2,
+        "pronoun_2nd": 0,
+        "negation": 1,
+        "sentence": "Yes, I have! While traveling in Asia, we were wandering around a bustling market when \"Curious Cat\" in our group struck up a conversation with a vendor selling traditional crafts. It turned out he was also part of a local cultural troupe and invited us to watch their performance that evening. We went along and ended up experiencing an amazing display of music and dance that we never would have found on our own. Afterward, the performers invited us backstage for tea and more conversation about their traditions and community. It was such an unexpected highlight of our trip — those kinds of spontaneous encounters are what make traveling so enriching! Have you ever had an encounter like that where it felt like you stumbled into something truly unique?",
+        "hedge": 6
+    },
+    {
+        "sentence_index": 23,
+        "empath": {
+            "positive_emotion": 0.01652892561983471,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1,
+        "pronoun_2nd": 0,
+        "negation": 1,
+        "sentence": "Absolutely! On one trip, we found ourselves in a place known for its surfing scene. While none of us had ever surfed before, \"Adventurer\" in our group insisted we give it a try. We signed up for a beginner's lesson and spent the day trying (and often failing) to ride the waves. It was challenging but incredibly fun, and by the end of it, we'd all managed to stand up on our boards at least once. The rush of catching that first wave was unforgettable, and stepping out of my comfort zone like that really made me appreciate the thrill of trying something new. Have you ever taken on an unexpected adventure or activity that pushed your limits while traveling? 🌊🏄‍♀️",
+        "hedge": 5
+    },
+    {
+        "sentence_index": 24,
+        "empath": {
+            "positive_emotion": 0.01,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1,
+        "pronoun_2nd": 0,
+        "negation": 1,
+        "sentence": "Yes, I have! On a trip to New Zealand, we decided on a whim to go bungee jumping. \"Thrill Seeker\" in our group was all for it and somehow convinced the rest of us to join. Standing on that ledge with nothing but air beneath me was terrifying, but taking the leap ended up being one of the most exhilarating experiences I've ever had. It really pushed my limits and taught me how much fun stepping out of my comfort zone can be. Have you ever been talked into doing something adventurous that turned out to be an amazing experience?",
+        "hedge": 4
+    },
+    {
+        "sentence_index": 25,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "That sounds amazing! Zip-lining through a jungle must have been such a rush. I've got another thrill-seeker story for you — I went white-water rafting down some intense rapids once. \"Adrenaline Junkie\" in our group had been raving about it, so we decided to give it a shot. The adrenaline was pumping as we navigated the twists and turns of the river, trying not to capsize the raft. It was such an incredible experience that combined teamwork with sheer excitement, and by the end of it, everyone was just buzzing with energy. But I do appreciate chill adventures too; sometimes exploring local cafes or hiking quieter trails is just what you need to unwind on a trip. How about you? Do you prefer high-energy activities or more laid-back explorations when you're traveling?",
+        "hedge": 2
+    },
+    {
+        "sentence_index": 26,
+        "empath": {
+            "positive_emotion": 0.009523809523809525,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.009523809523809525,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "I totally get that balance! White-water rafting sounds like such an epic adventure, but I also really enjoy the slower pace of just wandering through a new city or discovering hidden spots in nature. For me, it depends on the mood and place — sometimes I'm all about the high-energy thrills, while other times I love soaking in the culture at a leisurely pace. Exploring local cafes and trying different foods is always a favorite part of my travels too; there's something special about savoring local flavors and people-watching in a cozy setting. What's one laid-back travel experience you've had that really stuck with you?",
+        "hedge": 6
+    },
+    {
+        "sentence_index": 27,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "One of my favorite laid-back experiences was during a trip to Italy. We ended up in this quaint little village in Tuscany, where time seemed to slow down. \"Foodie\" in our group suggested we spend the day exploring the local vineyards and olive groves, sampling wines and freshly pressed olive oil. We took a leisurely bike ride through the countryside, stopping wherever caught our interest, like at small family-run eateries for authentic home-cooked meals. The views were breathtaking, and just soaking it all in with good company made it unforgettable. It was one of those days where you appreciate life’s simple pleasures. Have you had any moments like that on your travels where everything just felt perfectly serene?",
+        "hedge": 5
+    },
+    {
+        "sentence_index": 28,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 1,
+        "sentence": "That sounds absolutely idyllic! I had a similar experience when I visited a small island in Greece. We spent the day wandering through narrow streets lined with white-washed houses, eventually finding ourselves on a quiet beach with crystal-clear water. \"Beach Lover\" in our group suggested we just relax and take it all in, so we set up under some shade and enjoyed the gentle sound of waves lapping at the shore. Later, we stumbled upon a little seaside taverna where they served freshly caught seafood. Watching the sunset over the ocean while savoring simple yet delicious food made for one of those perfect serene moments you never forget. Have you ever found an unexpected spot that became your little slice of paradise during your travels?",
+        "hedge": 4
+    },
+    {
+        "sentence_index": 29,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 1,
+        "sentence": "That sounds absolutely idyllic! I had a similar experience when I visited a small island in Greece. We spent the day wandering through narrow streets lined with white-washed houses, eventually finding ourselves on a quiet beach with crystal-clear water. \"Beach Lover\" in our group suggested we just relax and take it all in, so we set up under some shade and enjoyed the gentle sound of waves lapping at the shore. Later, we stumbled upon a little seaside taverna where they served freshly caught seafood. Watching the sunset over the ocean while savoring simple yet delicious food made for one of those perfect serene moments you never forget. Have you ever found an unexpected spot that became your little slice of paradise during your travels?",
+        "hedge": 4
+    },
+    {
+        "sentence_index": 30,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.008620689655172414,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "That sounds like such a magical find! There's something special about discovering hidden gems like that, especially in the middle of bustling cities. I once stumbled upon a secluded little park in Paris while just meandering through the streets. \"Wanderer\" in my group was all about getting off the beaten path, so we took a detour and found this charming spot with sculptures and fountains. It felt worlds away from the city buzz, and we spent a peaceful afternoon there people-watching and enjoying fresh pastries from a nearby bakery. Those unplanned discoveries can really add an extra layer to your travels. Have you ever made friends or met interesting people during one of these spontaneous adventures?",
+        "hedge": 7
+    },
+    {
+        "sentence_index": 31,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.008620689655172414,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Absolutely! One time, while wandering through the streets of Lisbon, we veered off into a small alleyway and found this cozy little courtyard with beautiful tilework and blooming bougainvillea. \"Spontaneous Adventurer\" in our group suggested we explore more side streets like it. The atmosphere was so tranquil compared to the bustling city outside. We ended up chatting with a local artist who had set up her easel there; she was painting the vibrant scene around us. It was such an unexpected treat to not only find that hidden spot but also connect with someone living their passion right there on the street. Have you ever met someone memorable during your travels who left a lasting impression?",
+        "hedge": 8
+    },
+    {
+        "sentence_index": 32,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 2,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Yes, meeting memorable people is one of the best parts of traveling! I remember during a trip to Morocco, we met an incredible local guide named Ahmed in the medina of Marrakech. He took us through winding alleyways and vibrant markets, sharing stories and insights about his life there. \"Storyteller\" was definitely his vibe; he had this captivating way of talking that made everything come alive. Over mint tea, he shared tales from his childhood and taught us some Arabic phrases. His warmth and knowledge really enhanced our experience and left a lasting impression on me. Have you ever stayed in touch with anyone you've met while traveling?",
+        "hedge": 2
+    },
+    {
+        "sentence_index": 33,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.00847457627118644,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.00847457627118644,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Absolutely, staying in touch with people I've met while traveling has led to some wonderful friendships. There was a time during a solo trip to Argentina when I connected with a fellow traveler named Lucia at a hostel in Buenos Aires. We ended up exploring the city together and even took a tango class, which was such a blast! We hit it off and kept in touch through social media after returning home. Since then, we've visited each other's countries — she came to visit me, and I went back to Argentina another year later. It's amazing how travel can bring people together like that! Have you ever had someone you met on your travels come visit you?",
+        "hedge": 2
+    },
+    {
+        "sentence_index": 34,
+        "empath": {
+            "positive_emotion": 0.01020408163265306,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.01020408163265306,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "That's awesome! It sounds like you and Lucia have had some incredible adventures together. I’ve actually planned a few reunions with travel friends, and they've been some of the most epic trips. Once, a group of us who met while backpacking in Southeast Asia decided to meet up again in Thailand for another round of exploring. We rented scooters, revisited our favorite spots, and even discovered new ones along the way. It's so special to reconnect with people who share those unique travel memories. Do you have any dream destinations you'd love to visit with your travel buddies?",
+        "hedge": 2
+    },
+    {
+        "sentence_index": 35,
+        "empath": {
+            "positive_emotion": 0.031914893617021274,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.02127659574468085,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Absolutely, I have a few dream destinations in mind! One place that's high on my list is New Zealand. I've heard the landscapes are absolutely breathtaking, and it seems like an incredible place for adventure with friends. Exploring those stunning hiking trails and maybe even doing some bungee jumping or skydiving would be such a thrill with travel buddies who love a good adrenaline rush. Plus, it's always fun to have people around who share your sense of adventure and spontaneity. How about you? Where's a dream destination you'd love to explore with friends?",
+        "hedge": 6
+    },
+    {
+        "sentence_index": 36,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "New Zealand sounds amazing for an adventure-packed trip with friends! For me, Iceland is definitely a dream destination. The thought of exploring its dramatic landscapes — from the geysers and hot springs to the glaciers and waterfalls — is really exciting. Plus, I've heard that experiencing the Northern Lights there is absolutely magical. It would be such a unique experience to road trip around with friends, checking out all those natural wonders together. Have you ever had any memorable experiences chasing nature's wonders like that?",
+        "hedge": 6
+    },
+    {
+        "sentence_index": 37,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Iceland sounds like an incredible adventure, especially with those natural wonders! I once had a memorable experience chasing nature's beauty in Norway. We ventured out to the Lofoten Islands during the winter, and it was breathtaking. The rugged mountains rising straight from the sea, along with the colorful fishing villages nestled among them, created such a picturesque setting. And of course, witnessing the Northern Lights dancing across the sky was just surreal — truly one of those moments where you feel incredibly lucky to be there. Have you ever done any spontaneous trips to see something extraordinary in nature?",
+        "hedge": 2
+    },
+    {
+        "sentence_index": 38,
+        "empath": {
+            "positive_emotion": 0.009615384615384616,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "That sounds like such an incredible experience in Norway! I did have a spontaneous trip once when a friend and I decided on a whim to head to Yosemite National Park for the weekend. We had heard about the firefall phenomenon that happens in February, where the setting sun hits Horsetail Fall just right, making it glow like lava. We packed up our gear and drove out with hardly any plans, but it turned out to be amazing. Standing there with other nature lovers as we watched the waterfall light up was truly unforgettable. Have you ever done something spontaneous like that while traveling?",
+        "hedge": 4
+    },
+    {
+        "sentence_index": 39,
+        "empath": {
+            "positive_emotion": 0.008771929824561403,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.008771929824561403,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Wow, the firefall at Yosemite sounds absolutely magical! I love those moments when a spontaneous decision leads to such unforgettable experiences. I did something similar once when I was traveling in Peru. A group of us were planning to visit Machu Picchu, but on a whim, we decided to take an extra day and hike up Huayna Picchu as well. The views from the top were stunning — you could see all of Machu Picchu laid out below with the mountains surrounding it. It felt like we had discovered our own little piece of paradise just by being open to adventure. Have you ever had one of those travel moments that exceeded your expectations?",
+        "hedge": 4
+    },
+    {
+        "sentence_index": 40,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "That sounds like an incredible experience at Machu Picchu! The spontaneity really adds to the magic of travel, doesn't it? I had a similar moment when visiting Japan. I initially went for the cherry blossoms in Tokyo, but a local recommended a lesser-known spot called Yoshinoyama. On a whim, I decided to check it out and was completely blown away by the sea of cherry blossoms covering the mountainside. It was less crowded and felt more serene than some of the popular spots. Sometimes those unexpected discoveries make the journey even more memorable. Have you found any hidden gems during your travels that left a lasting impression on you?",
+        "hedge": 4
+    },
+    {
+        "sentence_index": 41,
+        "empath": {
+            "positive_emotion": 0.009523809523809525,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.009523809523809525,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Yoshinoyama sounds absolutely stunning, especially with all those cherry blossoms! Hidden gems really do add an extra layer of magic to a trip. I once stumbled upon a quaint little village in the Czech Republic called Český Krumlov. It wasn't originally on my itinerary, but after hearing some fellow travelers rave about it, I decided to make a detour. The town felt like stepping into a fairytale with its cobblestone streets and charming architecture. Watching the sunset over the Vltava River from the castle was just breathtaking. Do you have any travel destinations you've heard about that you'd love to explore for their hidden charms?",
+        "hedge": 3
+    },
+    {
+        "sentence_index": 42,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.012345679012345678,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Český Krumlov sounds like a fairytale indeed! I’ve always been intrigued by the idea of exploring some lesser-known parts of Portugal, like the Azores. From what I've heard, they're filled with lush landscapes, volcanic craters, and quaint villages that offer a more off-the-beaten-path experience compared to mainland Portugal. The chance to discover natural wonders without the large crowds really appeals to me. Have you ever explored or wanted to explore somewhere that's known for its natural beauty but isn't as touristy?",
+        "hedge": 5
+    },
+    {
+        "sentence_index": 43,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.013513513513513514,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "The Azores definitely sound like a dream destination with all that untouched natural beauty. I've always wanted to explore the Faroe Islands for similar reasons. The dramatic cliffs, waterfalls, and remote villages seem so enchanting and relatively undiscovered by mainstream tourism. Plus, I imagine it would be an incredible place to experience solitude in nature's grandeur. Is there a particular type of landscape or environment that draws you in when you choose travel destinations?",
+        "hedge": 5
+    },
+    {
+        "sentence_index": 44,
+        "empath": {
+            "positive_emotion": 0.010752688172043012,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.021505376344086023,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "The Faroe Islands do have a certain allure with their rugged, untouched landscapes. I tend to be drawn to destinations that offer diverse natural scenery — somewhere you can experience mountains and oceans in close proximity, like New Zealand or Iceland. There's something about having the best of both worlds that really appeals to me. Plus, I love hiking and being near water, so places that combine those elements are always high on my list. How about you? Are there specific features or experiences you look for when picking a place to travel?",
+        "hedge": 7
+    },
+    {
+        "sentence_index": 45,
+        "empath": {
+            "positive_emotion": 0.011904761904761904,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.011904761904761904,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "I totally get that appeal! Having both mountains and oceans nearby can make for such a dynamic travel experience. For me, I often look for places rich in culture and history. I love wandering through ancient ruins or historic districts because it feels like stepping back in time. Plus, experiencing local traditions and cuisine adds so much depth to a trip. Do you find yourself drawn more to nature-focused destinations, or do cultural experiences play a big role in your travel plans as well?",
+        "hedge": 4
+    },
+    {
+        "sentence_index": 46,
+        "empath": {
+            "positive_emotion": 0.011363636363636364,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.011363636363636364,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Cultural experiences definitely play a big role in my travel plans too. There's something so enriching about learning the history behind a place and connecting with its people through traditions and food. I love visiting places where you can do both — explore stunning landscapes and dive into cultural heritage. For example, places like Italy offer incredible natural beauty along with deep historical roots and amazing cuisine. Is there a particular destination that you've visited or want to visit because it offers both natural wonders and rich culture?",
+        "hedge": 3
+    },
+    {
+        "sentence_index": 47,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Italy is a perfect example with its combination of beautiful landscapes and rich cultural heritage. Another place on my list is Peru. It has the incredible Andes mountains and breathtaking sites like Machu Picchu, along with vibrant local cultures and delicious cuisine. The idea of hiking through such stunning scenery while also experiencing the depth of history there really excites me. Have you ever been to or considered visiting somewhere like that, where both nature and culture offer so much to explore?",
+        "hedge": 6
+    },
+    {
+        "sentence_index": 48,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Peru sounds absolutely amazing, and it's definitely a place where nature and culture blend beautifully. I've always been intrigued by Japan for similar reasons. It offers breathtaking landscapes, from the cherry blossoms in spring to the serene beauty of Mount Fuji, coupled with an incredibly rich cultural heritage — from traditional tea ceremonies to its modern yet historic cities like Kyoto. It's fascinating how such different elements coexist so harmoniously there. Is there a place you’ve visited that left a lasting impression on you because of its unique combination of culture and nature?",
+        "hedge": 3
+    },
+    {
+        "sentence_index": 49,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.012048192771084338,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Japan is a fantastic choice with its seamless mix of nature and culture. For me, Greece left a lasting impression for similar reasons. The stunning landscapes, like the cliffs of Santorini or the rugged beauty of Crete, are complemented by ancient ruins and rich mythology that you can feel as you explore historical sites like the Acropolis. Plus, Greek hospitality and cuisine really added to the experience. Is there a place you've visited that surprised you with its cultural richness or natural beauty?",
+        "hedge": 3
+    },
+    {
+        "sentence_index": 50,
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0,
+        "pronoun_2nd": 0,
+        "negation": 0,
+        "sentence": "Greece sounds incredible, with its blend of ancient history and natural beauty. For me, Morocco was a surprising discovery in terms of cultural richness and diverse landscapes. From the bustling markets of Marrakech to the serene Sahara Desert dunes, it felt like every place had its own unique story to tell. The architecture is stunning, too — especially the intricate details you find in mosques and palaces. Did you find any aspects of Greece particularly surprising or different from what you expected?",
+        "hedge": 3
+    }
+]

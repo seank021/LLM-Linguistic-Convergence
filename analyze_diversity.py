@@ -120,24 +120,29 @@ class Utils:
 # This is the main function that orchestrates the analysis.
 if __name__ == "__main__":
     conversation_type = Utils.get_arguments()
-    persona1, persona2, baseline = Utils.get_personas(conversation_type)
 
-    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5"]:
+    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5", "conversation6", "conversation7"]:
+        persona1, persona2, baseline = Utils.get_personas(conversation_type)
         print(f"- Analyzing {conversation}...")
         # Load conversation data
         print(f"    > Loading conversation data for {conversation} in {conversation_type}...")
         if conversation == "conversation1" or conversation == "conversation2":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
+            persona1, persona2 = persona1, persona2
         elif conversation == "conversation3":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{baseline}1.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}2.json"
-        elif conversation == "conversation4":
+            persona1, persona2 = baseline + "1", baseline + "2"
+        elif conversation == "conversation4" or conversation == "conversation6":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
-        else: # conversation == "conversation5"
+            persona1, persona2 = persona1, baseline
+        else: # conversation5 or conversation7
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
+            persona1, persona2 = persona2, baseline
+
         data1 = Utils.load_json(file_path1)
         data2 = Utils.load_json(file_path2)
         persona1_dialogue = Utils.json_to_list(data1)
@@ -181,8 +186,9 @@ if __name__ == "__main__":
         output_dir_plots = f"results/plots/{conversation_type}/diversity/{conversation}"
         Utils.draw_bar_chart(stats1, stats2, [persona1, persona2], "Diversity Metric", "Score", output_dir_plots, "diversity_metrics")
 
-    # Ablation: Average of Conversation1 and Conversation2
-    print("- Ablation: Analyzing the Average of Conversation1 and Conversation2...")
+    # Average of Conversation1 and Conversation2
+    print("- Analyzing the Average of Conversation1 and Conversation2...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[1]
     conv1_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation1/{persona1}.json")
     conv1_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation1/{persona2}.json")
     conv2_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation2/{persona1}.json")
@@ -204,4 +210,52 @@ if __name__ == "__main__":
     output_dir_avg_plots = f"results/plots/{conversation_type}/diversity/conversation1_2_average"
     Utils.draw_bar_chart(avg_persona1_stats, avg_persona2_stats, [persona1, persona2], "Diversity Metric", "Score", output_dir_avg_plots, "diversity_metrics")
 
+    # Average of Conversation4 and Conversation6
+    print("- Analyzing the Average of Conversation4 and Conversation6...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[2]
+    conv4_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation4/{persona1}.json")
+    conv4_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation4/{persona2}.json")
+    conv6_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation6/{persona1}.json")
+    conv6_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation6/{persona2}.json")
+    avg_persona1_stats, avg_persona2_stats = {}, {}
+
+    for key in conv4_persona1_stats.keys():
+        avg_persona1_stats[key] = (conv4_persona1_stats[key] + conv6_persona1_stats[key]) / 2
+        avg_persona2_stats[key] = (conv4_persona2_stats[key] + conv6_persona2_stats[key]) / 2
+
+    # Save average statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation4 and conversation6...")
+    output_dir_avg_statistics = f"results/statistics/{conversation_type}/diversity/conversation4_6_average"
+    Utils.save_stats_to_file(avg_persona1_stats, output_dir_avg_statistics, f"{persona1}")
+    Utils.save_stats_to_file(avg_persona2_stats, output_dir_avg_statistics, f"{persona2}")
+
+    # Draw plots for average statistics
+    print(f"    > Drawing plots for the average of conversation4 and conversation6...")
+    output_dir_avg_plots = f"results/plots/{conversation_type}/diversity/conversation4_6_average"
+    Utils.draw_bar_chart(avg_persona1_stats, avg_persona2_stats, [persona1, persona2], "Diversity Metric", "Score", output_dir_avg_plots, "diversity_metrics")
+
+    # Average of Conversation5 and Conversation7
+    print("- Analyzing the Average of Conversation5 and Conversation7...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[1], Utils.get_personas(conversation_type)[2]
+    conv5_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation5/{persona1}.json")
+    conv5_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation5/{persona2}.json")
+    conv7_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation7/{persona1}.json")
+    conv7_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/diversity/conversation7/{persona2}.json")
+    avg_persona1_stats, avg_persona2_stats = {}, {}
+
+    for key in conv5_persona1_stats.keys():
+        avg_persona1_stats[key] = (conv5_persona1_stats[key] + conv7_persona1_stats[key]) / 2
+        avg_persona2_stats[key] = (conv5_persona2_stats[key] + conv7_persona2_stats[key]) / 2
+
+    # Save average statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation5 and conversation7...")
+    output_dir_avg_statistics = f"results/statistics/{conversation_type}/diversity/conversation5_7_average"
+    Utils.save_stats_to_file(avg_persona1_stats, output_dir_avg_statistics, f"{persona1}")
+    Utils.save_stats_to_file(avg_persona2_stats, output_dir_avg_statistics, f"{persona2}")
+
+    # Draw plots for average statistics
+    print(f"    > Drawing plots for the average of conversation5 and conversation7...")
+    output_dir_avg_plots = f"results/plots/{conversation_type}/diversity/conversation5_7_average"
+    Utils.draw_bar_chart(avg_persona1_stats, avg_persona2_stats, [persona1, persona2], "Diversity Metric", "Score", output_dir_avg_plots, "diversity_metrics")
+    
     print(f"Finished analyzing diversity for {conversation_type}. All results saved in the 'results' directory.")

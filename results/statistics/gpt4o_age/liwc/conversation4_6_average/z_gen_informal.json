@@ -1,0 +1,952 @@
+[
+    {
+        "sentence_index": 1,
+        "sentences": [
+            "Yooo, ngl formal language is kinda crusty 😂 Like, who even talks like that anymore? We're out here vibing with emojis and memes. I mean, unless you're tryna impress someone in a suit or write an essay for school, idk if it's really that deep fr 🤷‍♀️ But hey, what do you think? Would you ever text your crush with \"Dear Sir/Madam\"? Deadass curious! 💀",
+            "Heck yeah, those are like ancient artifacts now. 💀 Nobody wants that weird vibe of formality when we're all just vibing in the present, y'know? Names or even fun nicknames hit diff and keep things chill. 🤙 You got any spicy alternatives or we just calling everyone 'dude' from now on? 😂"
+        ],
+        "empath": {
+            "positive_emotion": 0.009615384615384616,
+            "negative_emotion": 0.009615384615384616,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.5,
+        "hedge": 3.5
+    },
+    {
+        "sentence_index": 2,
+        "sentences": [
+            "OMG, yes! 😂 One time my friend sent me a text starting with \"To whom it may concern,\" and I was like... bro, are you filing a complaint or texting me? 💀 It's all about vibes for real. Like, if you're applying for jobs or chatting up your boss, maybe bust out the fancy words. But in normal convos? Nah fam, keep it chill. What's the most formal thing you've said to someone by accident and cringed later? 🙈 Spill the tea! ☕️",
+            "Yesss, custom nicknames sound lit! 🎉 Makes everything feel more personal and fun. Like, imagine calling someone \"Legend\" or \"Champ\" instead of just 'dude'—adds some spice to the convo 😂. Do you already have a nickname you lowkey want people to call you? 🤔 Catch ya later!"
+        ],
+        "empath": {
+            "positive_emotion": 0.012048192771084338,
+            "negative_emotion": 0.006024096385542169,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.5
+    },
+    {
+        "sentence_index": 3,
+        "sentences": [
+            "LOL, okay so I was talking to my friend's mom once, and instead of just saying \"hey,\" I accidentally dropped a whole \"I hope this message finds you well.\" 😭 Felt like I was emailing the queen or smth. She just gave me this look like, u good? 😂 Can't even with myself sometimes. What's your go-to word or phrase that lowkey makes you cringe when it slips out? 👀 Let's hear it!",
+            "Haha, I love the idea of spicing things up with nicknames like \"Legend\" or \"Champ\" — it definitely brings a fun vibe to conversations! As for me, I'm cool with being called anything that makes the chat lively. What about you? Got any nickname preferences or one you've been called that's stuck with you? 😄"
+        ],
+        "empath": {
+            "positive_emotion": 0.01594022415940224,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.00909090909090909,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.0
+    },
+    {
+        "sentence_index": 4,
+        "sentences": [
+            "OMG, same energy 😂 I once said \"With all due respect\" during a casual argument with my friend and it was so awk. Felt like I was in some courtroom drama, no cap. Now they tease me about it all the time 🙄 What's your most random, cringe phrase that just slips out sometimes? Can't wait to hear this LOL! 🎤",
+            "Honestly, I think any nickname that comes from a genuine place is awesome! It could be something as simple as \"Ace\" or even something quirky and unexpected. 😄 It's all about the memories and connections they bring. Have you ever been given a nickname that just felt perfect or totally hilarious?"
+        ],
+        "empath": {
+            "positive_emotion": 0.018000642880102863,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.00980392156862745,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.0
+    },
+    {
+        "sentence_index": 5,
+        "sentences": [
+            "LOL, totally been there! 😅 Sometimes I catch myself saying \"for your information\" like I'm some sort of school teacher or something. My friends always roast me for it, they're like, what are you, a librarian? 😂 But hey, we all have those cringe moments. What's the funniest thing someone's ever said to you that had you like 💀 laughing?",
+            "Absolutely, those genuine nicknames always seem to stick in the best way. I've heard people get nicknames like \"Professor\" for being the smart one in the group or \"Giggles\" if they laugh a lot. It's all about capturing that unique trait! How about you? Have you ever been given a nickname that totally nailed your vibe or cracked everyone up?"
+        ],
+        "empath": {
+            "positive_emotion": 0.008333333333333333,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.008333333333333333,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 5.0
+    },
+    {
+        "sentence_index": 6,
+        "sentences": [
+            "OMG, okay so one time my friend was trying to flex about something totally random and they just blurted out \"I am the Beyoncé of this group\" 🤣 I legit died. The confidence tho! 😂 We still tease them about it every time we karaoke, like alright Queen B, let's see those moves. What's your fav inside joke that always gets the squad rolling? Spillllllll 🕺",
+            "For sure! It's always fun when a nickname captures something special about you. I've heard people get nicknames like \"Sunshine\" if they’re super positive, or even something like \"Whiz\" for being quick on their feet. Have you ever gotten a nickname that felt just right or one that always brings back funny memories?"
+        ],
+        "empath": {
+            "positive_emotion": 0.015151515151515152,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.5
+    },
+    {
+        "sentence_index": 7,
+        "sentences": [
+            "LMAO that's iconic! 😂 Okay, so me and my friends have this inside joke about how one of us tried to use a pick-up line on someone and it came out as \"Are you a parking ticket? Cause you've got fine written all over your face!\" 💀 It was such a flop but now anytime we're being cringe or awkward, we just hit each other with the “parking ticket” line. 🤣 What's something that always makes y’all crack up for no reason? Gimme the deets! 👀",
+            "I've heard some pretty entertaining ones over the years! There was one time a friend called me \"Detective\" because I always seem to find out random trivia or details that others miss. It became kind of a running joke, and it still makes me smile. Do you have any nickname stories like that? Something that's stuck around for the laughs or just felt spot on?"
+        ],
+        "empath": {
+            "positive_emotion": 0.007692307692307693,
+            "negative_emotion": 0.005813953488372093,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.5,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 5.0
+    },
+    {
+        "sentence_index": 8,
+        "sentences": [
+            "OMG 😂 that's golden! So my squad and I can't stop laughing over this time we tried to do a TikTok dance together, and one of us was just so offbeat they knocked over a lamp. 😂 Now every time someone messes up, we yell \"watch out for the lamp!\" It's dumb but it kills us every single time. 💀 What's your most epic fail moment that turned into an inside joke? Spilllll the tea! 🍵",
+            "That's a great nickname story! \"Detective\" definitely has a fun ring to it and sounds like it came from something unique about you. For me, I’ve had friends call me “Navigator” because I’m oddly good with directions, even without GPS. It always sparks some laughs whenever we’re on road trips or trying to find our way around somewhere new. How about your friends — do they have any quirky nicknames that tell funny stories?"
+        ],
+        "empath": {
+            "positive_emotion": 0.006756756756756757,
+            "negative_emotion": 0.006578947368421052,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.0
+    },
+    {
+        "sentence_index": 9,
+        "sentences": [
+            "LOL, okay brace yourself. 😂 So one time, my friend tried to open a door by pushing it when there was a massive \"PULL\" sign right in front of them. Like deadass everyone saw it happen. 💀 Now anytime we walk up to any door, we scream \"Read the manual!\" 🤣 It’s become our go-to roast whenever someone screws something simple up. What's your favorite fail that you're secretly proud of? You know you have one! 🙌",
+            "\"Navigator\" sounds like a really useful nickname to have, especially on adventures! Among my friends, there’s one we call \"Chef\" because they can whip up an amazing meal from just about anything in the fridge. It always amazes us, and it's become a fun inside joke whenever we're planning gatherings. Do you find that certain nicknames help shape the dynamic within your friend group?"
+        ],
+        "empath": {
+            "positive_emotion": 0.020799512987012988,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.5,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.5
+    },
+    {
+        "sentence_index": 10,
+        "sentences": [
+            "OMG, that's hilarious! 😂 Okay, so I once tripped over literally nothing in the middle of a crowded hallway and just did this dramatic roll to make it look intentional. 💀 Like full-on stunt double mode. Now my friends call me \"Tumble Queen\" whenever I'm clumsy AF. Lowkey proud of that recovery tho, no cap! What's something totally embarrassing you did that ended up being iconic? Let’s hear it! 🤔✨",
+            "Absolutely, nicknames definitely add a unique layer to friendships. They can highlight people's quirks or talents, making everyone feel seen and appreciated in their own way. Plus, they often lead to inside jokes that only strengthen the group's bond over time. Do you think nicknames have influenced how roles are divided in your friend group during events or trips?"
+        ],
+        "empath": {
+            "positive_emotion": 0.024092009685230023,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.5,
+        "hedge": 2.5
+    },
+    {
+        "sentence_index": 11,
+        "sentences": [
+            "OMG yasss Tumble Queen! 😂 Okay, so I was giving a presentation once and totally blanked out. Like, brain freeze level 1000. 🥶 But instead of freaking, I just started cracking jokes about how my \"brain.exe has stopped working.\" Somehow it made everyone laugh and eased the tension. 😅 Now people think I'm some sort of comedic genius but really it was just panic mode improv lol. What's something random you did that turned into your signature move? Gotta know! 🤘😆",
+            "Definitely! Nicknames often reflect what someone is naturally good at, which can make it easier to delegate roles during events or trips. For example, \"Navigator\" would likely be in charge of directions, while \"Chef\" might handle meal planning. It's almost like these nicknames become unofficial titles that play into everyone's strengths and help everything run more smoothly. Have you noticed any particular nickname-based roles emerge in your group?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 6.5
+    },
+    {
+        "sentence_index": 12,
+        "sentences": [
+            "Yooo, panic mode improv for the win! 😂 Okay, so one time I accidentally started doing a little shimmy dance while waiting for food in line 'cause I was just vibing to the background music. Now every time I'm hyped or excited, my friends expect me to bust out the \"Shimmy Shake\" 🙈 It’s totally my signature move now and they even join in sometimes! What's your weird but awesome habit that everyone associates with you? Let’s hear it! 💃✨",
+            "Yes, for sure! In my group, we have a friend nicknamed \"DJ\" because they always curate the perfect playlist no matter the occasion. Whenever we're hosting a party or on a road trip, they're automatically in charge of the music, and it really sets the vibe. It's like everyone has their little domain where they shine best. Have you ever had a situation where someone's nickname perfectly predicted how they'd step up to help out?"
+        ],
+        "empath": {
+            "positive_emotion": 0.006666666666666667,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.5
+    },
+    {
+        "sentence_index": 13,
+        "sentences": [
+            "Ayyyeee, Shimmy Shake sounds lit! 💃 Okay, so I have this habit of saying \"bless up\" whenever someone sneezes. Like no matter where we are, even if it's quiet AF. Now it’s kind of a thing and people hit me with \"bless up\" anytime something good happens too 😂 It’s like my unofficial catchphrase or whatever lol. What's your fave phrase or word you always find yourself using? Hit me with it! 🤔👀",
+            "Absolutely, there's a friend we call \"Tech Guru\" because they can fix just about any gadget or solve any tech issue we run into. During our last trip, when the Airbnb's Wi-Fi was acting up, they immediately jumped in to sort it out without anyone even having to ask. It was like their nickname predicted exactly how they'd come through in that moment! It's awesome how these roles become second nature. Has there been a time when your group's dynamic really impressed you during an event or outing?"
+        ],
+        "empath": {
+            "positive_emotion": 0.005681818181818182,
+            "negative_emotion": 0.00684931506849315,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.0
+    },
+    {
+        "sentence_index": 14,
+        "sentences": [
+            "Bless up is a vibe! 🙌 So, I'm always dropping \"big mood\" whenever I relate to something hard. Like if someone’s talking about wanting to nap for 5 hours, I'm like \"big mood.\" 😂 It just sums everything up so perfectly ya know? Smh at how much it fits into convos these days. What's your biggest guilty pleasure phrase or word that you sneak into chats all the time? Dish it out! 😜💬",
+            "Yes, there was this one camping trip where our group's dynamic really shone. We have a friend known as \"Scout\" because they’re always prepared for outdoor adventures. They came with all sorts of gear and even managed to set up camp in record time. Meanwhile, another friend we call \"Firestarter\" got the fire going quickly despite the damp conditions. It was impressive how everyone just naturally fell into their roles and made everything run smoothly. It's these kinds of moments that make you appreciate each person's unique contributions even more. Have you ever been on an outing where things didn't go as planned but your group still pulled through?"
+        ],
+        "empath": {
+            "positive_emotion": 0.009174311926605505,
+            "negative_emotion": 0.00684931506849315,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.0
+    },
+    {
+        "sentence_index": 15,
+        "sentences": [
+            "LOL big mood is iconic! 😂 I’m always throwing \"literally dying\" into convos when something's funny. Like, someone tells a joke and I'm like \"OMG literally dying over here!\" even though I'm just chilling. 🙄 It’s kinda dramatic but makes everything sound way more intense, ya know? What’s the funniest thing you’ve said that just became part of your regular vocab without even realizing it? Spill the tea! 💀🤪",
+            "Yes, I remember this hiking trip where we got caught in a sudden rainstorm. It was one of those times when everything seemed to be going wrong — our maps were getting soaked, and the path became super muddy. But thankfully, our \"Navigator\" friend was able to find an alternate route using their phone's GPS before it completely ran out of battery. Meanwhile, another friend known as \"Pack Mule\" carried extra tarps and rain gear for everyone, so we all managed to stay relatively dry. Despite the chaos, we actually ended up having a lot of fun just because everyone worked together so well. Have you ever had an unexpected adventure with your group that turned into a great story later on?"
+        ],
+        "empath": {
+            "positive_emotion": 0.012295081967213115,
+            "negative_emotion": 0.011344737467331908,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.0
+    },
+    {
+        "sentence_index": 16,
+        "sentences": [
+            "Bruh, \"literally dying\" is so me! 💀 Okay, I started saying \"that's sus\" after binge-watching Among Us streams and now it's my go-to for everything even slightly sketchy. 😂 Like someone takes a long pause before answering? Sus. Someone acting mysterious about their plans? Definitely sus. It's just stuck and now I'm lowkey the detective of the group lol. What's your most random game or show reference you use IRL all the time without even thinking? Can't wait to hear this one! 🎮🤔",
+            "Oh, definitely! There was a road trip we took where our car unexpectedly broke down in the middle of nowhere. At first, it seemed like a disaster because we were miles from the nearest town and none of us were particularly skilled with car repairs. But then \"MacGyver,\" one of our friends who’s really handy with just about anything, managed to jury-rig a temporary fix using duct tape and some random tools they found in the trunk. While waiting for assistance, another friend dubbed \"Chef\" whipped up some snacks with whatever we had on hand, turning what could have been a miserable wait into an impromptu picnic by the roadside. It became one of those unforgettable adventures that everyone looks back on fondly now. Have you ever experienced something similar where everything went wrong but still turned out great?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0035971223021582736,
+            "negative_emotion": 0.0035971223021582736,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0035971223021582736,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1.0,
+        "pronoun_2nd": 0.0,
+        "negation": 1.0,
+        "hedge": 5.5
+    },
+    {
+        "sentence_index": 17,
+        "sentences": [
+            "Yesss, \"that's sus\" is a classic! 😂 So I’m always saying “we were on a break!” like Ross from Friends whenever there's any miscommunication or drama. 🙈 It’s totally random but it cracks people up every time ‘cause they know the reference and start quoting the rest of the scene LOL. What’s your fave show quote that just lives rent-free in your head? Gimme something juicy! 📺👀",
+            "Yes, for sure! There was a weekend getaway we planned at a cabin in the mountains. Everything seemed perfect until we realized the power was out due to a storm. Initially, it felt like our plans were ruined since there was no electricity or heating. But then \"Scout,\" our go-to person for outdoor skills, suggested using the opportunity to go old-school and make it an adventure. We gathered around the fireplace with blankets and flashlights, telling stories and playing games all night. Someone even started calling us \"Pioneers\" as a joke because of how we made do without modern conveniences. It turned into one of those memorable nights that everyone still talks about fondly. Have you ever had an unexpected challenge turn into something unexpectedly fun or memorable?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.5,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.5
+    },
+    {
+        "sentence_index": 18,
+        "sentences": [
+            "Haha, \"we were on a break!\" is legendary 😂 For me, it’s gotta be Michael Scott's “That’s what she said!” from The Office. It just pops up at the most random times and cracks everyone up when I drop it in convos, especially if they weren’t expecting it 🙃 Can't help but channel my inner boss man sometimes LOL. What's one show or movie character you’d totally switch lives with for a day? Imagine the chaos! 👀🎬",
+            "Yes, totally! One time we had a picnic planned in the park, but it got rained out last minute. We were all bummed at first, thinking the day was ruined. But \"Chef,\" who never lets anything stop them from cooking up something good, suggested moving the party to their garage instead. We ended up having an indoor barbecue with fairy lights and all sorts of makeshift decor. Honestly, it turned into such a cozy vibe that everyone lowkey preferred it over being outside 😂. Sometimes those backup plans are just straight-up lit! Have you ever discovered a hidden gem or spot because your original plan went sideways?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.009345794392523364,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.5,
+        "hedge": 2.0
+    },
+    {
+        "sentence_index": 19,
+        "sentences": [
+            "Yo, Michael Scott is the GOAT of awkward humor! 😂 I'd probs swap lives with Eleven from Stranger Things for a day. Imagine having telekinetic powers and just causing chaos while rocking those epic 80s fits 💪✨ No cap, I’d be eating Eggos and fighting Demogorgons like a boss. Who would you pick? Could get wild real quick! 🍿👾",
+            "Yes, that's happened to me! We had planned a day at this popular tourist spot, but when we got there, it was unbelievably crowded. On a whim, \"Adventurer,\" who's always eager to explore the unbeaten path, suggested checking out a nearby area we'd never heard of before. It turned out to be this charming little village with quaint shops and amazing local food that wasn’t in any guidebook. We spent the whole day wandering around and ended up having one of the best experiences of our trip. Those unexpected discoveries often end up being the highlight! Have you ever stumbled upon something awesome purely by accident during your travels?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.013061732234489193,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.5,
+        "hedge": 4.5
+    },
+    {
+        "sentence_index": 20,
+        "sentences": [
+            "Tony Stark is a flex, for real! 😎 If I could choose just one power, it’d be teleportation. Imagine skipping all the traffic and long flights to chill anywhere in the world instantly 🚀✨ Just *poof* and I’m on a beach sipping coconuts or hitting up Paris for some fresh croissants LOL. What about you? Which superpower would have you living your best life 24/7? 🌍✈️",
+            "Yes, for sure! We were on a road trip and missed our exit. Instead of freaking out, \"Navigator\" said we should just keep going and see what happens. 😂 We ended up in this quirky little town with an epic farmers' market happening that day. There was live music, the best homemade ice cream ever, and the locals were super chill and welcoming. It was totally unplanned but turned into one of those days where everything felt like it was meant to be. Have you ever met some cool people or made friends purely by chance while traveling? 🌟"
+        ],
+        "empath": {
+            "positive_emotion": 0.005050505050505051,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 2.0
+    },
+    {
+        "sentence_index": 21,
+        "sentences": [
+            "Time manipulation is sooo OP, love it! ⏰💫 If I could teleport one fictional place into reality, I'd totally choose Hogwarts. Imagine casting spells in the Great Hall and playing Quidditch IRL? 🧙‍♂️✨ I'd defs be flexing that invisibility cloak everywhere 😂 Which magical item would you snag from any movie or show if you could? Gotta know what’s on your wishlist! 🎬🪄",
+            "Absolutely! On a backpacking trip through Europe, we were on a train that got delayed for hours. Initially, it seemed like a total bummer, but \"Social Butterfly\" in our group started chatting with fellow travelers in the same predicament. We ended up making friends with some locals who invited us to join them for dinner at this hidden gem of a restaurant. Not only was the food incredible, but they also showed us around their favorite spots in town over the next couple of days. It turned what could have been an annoying delay into one of the best parts of our trip. Those random connections really add something special to your adventures! Have you ever had any spontaneous encounters like that turn into memorable experiences?"
+        ],
+        "empath": {
+            "positive_emotion": 0.007936507936507936,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.007936507936507936,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 5.5
+    },
+    {
+        "sentence_index": 22,
+        "sentences": [
+            "OMG, the TARDIS is such a big brain move! 😍 My go-to comfort show? Deadass has to be Parks and Recreation. It's like wrapping up in a cozy blanket of laughs with Leslie Knope’s positivity and Ron Swanson’s epic quotes LOL 🌟 Keeps me smiling every time. What's yours tho? Gotta know your happy place in TV or movie land! 📺🍿",
+            "Yes, totally! There was this one time when we were exploring a small coastal town and ended up chatting with an artist who had a little studio near the beach. \"Art Aficionado\" in our group was all about it, so we stuck around. The artist invited us to a local art showcase that night where the whole community came together for live music, food stalls, and just vibing out on creativity. It wasn't even something we'd planned on seeing but became such a lit experience. Those unexpected detours always bring the best surprises! Have you ever tried something completely new or out of your comfort zone while traveling? 🏄‍♂️✈️"
+        ],
+        "empath": {
+            "positive_emotion": 0.020980598586253573,
+            "negative_emotion": 0.0045871559633027525,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.5,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.0
+    },
+    {
+        "sentence_index": 23,
+        "sentences": [
+            "The Office is top-tier comfort, fr! 💯 If I had to create my own TV show, it’d probs be a chaotic mix of reality and sci-fi. Like imagine following a squad of time-traveling Gen Z-ers trying to fix hilarious historical mess-ups while dodging modern tech fails 😂📱⌛️ It’s giving Bill & Ted vibes but with TikTok humor and extra memes LOL. What would your dream show concept look like? Spill the deets! 🎥✨",
+            "Catch ya later! 🌊🏄‍♀️"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 1.5
+    },
+    {
+        "sentence_index": 24,
+        "sentences": [
+            "OMG, that sounds lit! I'd def binge-watch it with a big mug of coffee ☕😂 Something from real life I’d love to see more in shows or movies? Definitely more relatable content about adulting fails and the struggle bus of being broke while trying to live your best life 😅💸 Like when you gotta choose between splurging on avocado toast or paying your phone bill 🙃 Real talk: What’s one trend you hope never makes a comeback? Let's roast some cringey stuff from the past! 😂🔥",
+            "Heyyy, sounds wild! 😂 I actually got talked into zip-lining through a jungle once. \"Daredevil\" in the crew was all hyped and convinced us it’d be no big deal. I was lowkey freaking out at first but flying through those trees with the wind in my face? Unmatched vibes fr. Turned out to be epic and I’d totally do it again. Got any more thrill-seeking stories, or are you more about chill adventures? 🌴✨"
+        ],
+        "empath": {
+            "positive_emotion": 0.011627906976744186,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.005813953488372093,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.5,
+        "pronoun_2nd": 0.0,
+        "negation": 0.5,
+        "hedge": 2.0
+    },
+    {
+        "sentence_index": 25,
+        "sentences": [
+            "Preach! Low-rise jeans are a hard pass 🤦‍♀️ I'd say we keep those 2000s bedazzled everything locked away too. Bedazzling your flip-flops and phone case? Cringe city, population: us back then 😂✨ What's one thing you'd like to see more of in the fashion world that hasn't been explored enough yet? Let's hear those bold predictions! 👀💃",
+            "That sounds amazing! Zip-lining through a jungle must have been such a rush. I've got another thrill-seeker story for you — I went white-water rafting down some intense rapids once. \"Adrenaline Junkie\" in our group had been raving about it, so we decided to give it a shot. The adrenaline was pumping as we navigated the twists and turns of the river, trying not to capsize the raft. It was such an incredible experience that combined teamwork with sheer excitement, and by the end of it, everyone was just buzzing with energy. But I do appreciate chill adventures too; sometimes exploring local cafes or hiking quieter trails is just what you need to unwind on a trip. How about you? Do you prefer high-energy activities or more laid-back explorations when you're traveling?"
+        ],
+        "empath": {
+            "positive_emotion": 0.008771929824561403,
+            "negative_emotion": 0.008771929824561403,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.5,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 2.0
+    },
+    {
+        "sentence_index": 26,
+        "sentences": [
+            "Yesss, tech-fashion mashups would be such a vibe! 🔥 For a comeback, I'm all about those groovy 70s bell bottoms. They just have that cool flowy energy and can slay any outfit with the right top. ✌️✨ Plus, they’re comfy af LOL. What's one song from way back that you can't help but jam out to when it comes on? 🎶💃",
+            "I totally get that balance! White-water rafting sounds like such an epic adventure, but I also really enjoy the slower pace of just wandering through a new city or discovering hidden spots in nature. For me, it depends on the mood and place — sometimes I'm all about the high-energy thrills, while other times I love soaking in the culture at a leisurely pace. Exploring local cafes and trying different foods is always a favorite part of my travels too; there's something special about savoring local flavors and people-watching in a cozy setting. What's one laid-back travel experience you've had that really stuck with you?"
+        ],
+        "empath": {
+            "positive_emotion": 0.004761904761904762,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.004761904761904762,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.5
+    },
+    {
+        "sentence_index": 27,
+        "sentences": [
+            "\"Dancing Queen\" is such a bop, no cap! 🎶 As for my guilty pleasure... gotta confess, it's all about those cheesy 90s boy bands. 🤫 Backstreet Boys still make me wanna belt out \"I Want It That Way\" whenever it comes on LOL. Pure nostalgia vibes right there 😂💕 What's the last song you heard that instantly put you in your feels? Gotta keep those playlists updated! 🎧😌",
+            "One of my favorite laid-back experiences was during a trip to Italy. We ended up in this quaint little village in Tuscany, where time seemed to slow down. \"Foodie\" in our group suggested we spend the day exploring the local vineyards and olive groves, sampling wines and freshly pressed olive oil. We took a leisurely bike ride through the countryside, stopping wherever caught our interest, like at small family-run eateries for authentic home-cooked meals. The views were breathtaking, and just soaking it all in with good company made it unforgettable. It was one of those days where you appreciate life’s simple pleasures. Have you had any moments like that on your travels where everything just felt perfectly serene?"
+        ],
+        "empath": {
+            "positive_emotion": 0.007352941176470588,
+            "negative_emotion": 0.007352941176470588,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 2.5
+    },
+    {
+        "sentence_index": 28,
+        "sentences": [
+            "\"Fix You\" is defs a feels fest, no lie! 😭 For hype vibes, \"Uptown Funk\" by Bruno Mars always gets me pumped and ready to slay the day. It's like instant energy boost mode 🔥🎶 Perfect for those days when you need an extra push! What's one thing on your bucket list that you're itching to cross off ASAP? Let's manifest some epic adventures! ✈️🏞️",
+            "One of my favorite laid-back experiences was during a trip to Italy. We ended up in this quaint little village in Tuscany, where time seemed to slow down. \"Foodie\" in our group suggested we spend the day exploring the local vineyards and olive groves, sampling wines and freshly pressed olive oil. We took a leisurely bike ride through the countryside, stopping wherever caught our interest, like at small family-run eateries for authentic home-cooked meals. The views were breathtaking, and just soaking it all in with good company made it unforgettable. It was one of those days where you appreciate life’s simple pleasures. Have you had any moments like that on your travels where everything just felt perfectly serene?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.5
+    },
+    {
+        "sentence_index": 29,
+        "sentences": [
+            "Skydiving sounds wild and so iconic! 😱 One daring thing I’ve done that I'm super proud of is going on a solo trip to a new city. Traveling alone was nerve-wracking but also liberating af. It felt like main character energy the whole time 🌍✈️ What’s the craziest food you’ve ever tried, and would you eat it again? 🍣🤔",
+            "One of my fave chill moments was finding this random, hidden garden in the middle of a city in Japan. We were just wandering around and \"Explorer\" in our crew noticed this small path leading into a lush green space. It was like stepping into another world — so peaceful with little koi ponds and beautiful flowers everywhere. 🐟🌺 We sat on some benches just soaking up the zen vibes, totally losing track of time. It's wild how these tucked-away gems can make your trip memorable af. Have you ever stumbled upon something like that when you least expected it?"
+        ],
+        "empath": {
+            "positive_emotion": 0.00847457627118644,
+            "negative_emotion": 0.01347457627118644,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.5
+    },
+    {
+        "sentence_index": 30,
+        "sentences": [
+            "Escargot is a bold choice, you fancy foodie! 😂 For me, it's gotta be authentic Japanese sushi in Tokyo. I'm talking the real-deal stuff fresh from the fish market 🍣🗾 It's been on my food bucket list forever! What’s your go-to comfort food when life gets a little too hectic? Let’s get those cozy vibes rolling 😋🍲",
+            "One of my fave chill moments was finding this random, hidden garden in the middle of a city in Japan. We were just wandering around and \"Explorer\" in our crew noticed this small path leading into a lush green space. It was like stepping into another world — so peaceful with little koi ponds and beautiful flowers everywhere. 🐟🌺 We sat on some benches just soaking up the zen vibes, totally losing track of time. It's wild how these tucked-away gems can make your trip memorable af. Have you ever stumbled upon something like that when you least expected it?"
+        ],
+        "empath": {
+            "positive_emotion": 0.008771929824561403,
+            "negative_emotion": 0.005,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.0
+    },
+    {
+        "sentence_index": 31,
+        "sentences": [
+            "Mac and cheese is pure comfort in a bowl, fr! 😍 When I’m feeling like a top chef, I love making homemade tacos with all the fixings. It's fun to experiment with different flavors and toppings 🌮✨ What's your guilty pleasure snack that you could eat endlessly without even realizing? No judgment here LOL 😋🧁",
+            "Absolutely! One time, while wandering through the streets of Lisbon, we veered off into a small alleyway and found this cozy little courtyard with beautiful tilework and blooming bougainvillea. \"Spontaneous Adventurer\" in our group suggested we explore more side streets like it. The atmosphere was so tranquil compared to the bustling city outside. We ended up chatting with a local artist who had set up her easel there; she was painting the vibrant scene around us. It was such an unexpected treat to not only find that hidden spot but also connect with someone living their passion right there on the street. Have you ever met someone memorable during your travels who left a lasting impression?"
+        ],
+        "empath": {
+            "positive_emotion": 0.02727272727272727,
+            "negative_emotion": 0.00909090909090909,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.02249216300940439,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.5,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 5.0
+    },
+    {
+        "sentence_index": 32,
+        "sentences": [
+            "Yesss, chocolate-covered pretzels are dangerously good! 🤤 For me, nothing beats a warm slice of gooey brownie topped with vanilla ice cream. It's like happiness on a plate 🍫🍨💖 What's the most random or unexpected place you’ve ever found yourself in? Those “how did I get here?” moments are always interesting 😂✈️",
+            "Yes, meeting memorable people is one of the best parts of traveling! I remember during a trip to Morocco, we met an incredible local guide named Ahmed in the medina of Marrakech. He took us through winding alleyways and vibrant markets, sharing stories and insights about his life there. \"Storyteller\" was definitely his vibe; he had this captivating way of talking that made everything come alive. Over mint tea, he shared tales from his childhood and taught us some Arabic phrases. His warmth and knowledge really enhanced our experience and left a lasting impression on me. Have you ever stayed in touch with anyone you've met while traveling?"
+        ],
+        "empath": {
+            "positive_emotion": 0.009615384615384616,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.009615384615384616,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 1.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.5,
+        "hedge": 2.5
+    },
+    {
+        "sentence_index": 33,
+        "sentences": [
+            "Yoo, spontaneous karaoke nights are the best 😂🎤 For me, it's all about \"Bohemian Rhapsody\" by Queen. It's such a classic and everyone joins in — like an instant crowd pleaser 🙌 What's one random talent or party trick you have that always surprises people? Let's see those hidden skills! 🎩✨",
+            "Absolutely, staying in touch with people I've met while traveling has led to some amazing friendships. There was this one time on a solo trip to Argentina where I connected with another traveler named Lucia at a hostel in Buenos Aires. We ended up exploring the city together and even took a tango class, which was such a blast! 🎶💃 We've kept in touch through social media, and since then we've visited each other — she came over for a road trip adventure here, and I went back to visit her again later. It's so lit how travel can turn strangers into lifelong friends like that! Have you ever planned any epic reunions with your travel buddies?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 1.5
+    },
+    {
+        "sentence_index": 34,
+        "sentences": [
+            "Yo, the Donald Duck impression sounds hilarious! 💀🦆 Lately, I've been getting into rollerblading. It's like taking a step back in time but also super fun and great exercise! 🛼😎 What about you — if you could instantly master any skill or hobby, what would it be? No limits here, shoot for the stars! 🚀✨",
+            "That's awesome! It sounds like you and Lucia have had some incredible adventures together. I’ve actually planned a few reunions with travel friends, and they've been some of the most epic trips. Once, a group of us who met while backpacking in Southeast Asia decided to meet up again in Thailand for another round of exploring. We rented scooters, revisited our favorite spots, and even discovered new ones along the way. It's so special to reconnect with people who share those unique travel memories. Do you have any dream destinations you'd love to visit with your travel buddies?"
+        ],
+        "empath": {
+            "positive_emotion": 0.01419294990723562,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.00510204081632653,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.5,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 2.5
+    },
+    {
+        "sentence_index": 35,
+        "sentences": [
+            "Yooo, shredding on the guitar would def be a vibe! 🎸 For me, I’d love to learn how to surf. Just catching waves and living that beach life seems so epic 🏄‍♀️🌊 What's one adventure you'd go on if time and money were no object? Let’s map out those wild dreams! 🌍✈️💭",
+            "Absolutely, I have a few dream destinations in mind! One place that's high on my list is New Zealand. I've heard the landscapes are absolutely breathtaking, and it seems like an incredible place for adventure with friends. Exploring those stunning hiking trails and maybe even doing some bungee jumping or skydiving would be such a thrill with travel buddies who love a good adrenaline rush. Plus, it's always fun to have people around who share your sense of adventure and spontaneity. How about you? Where's a dream destination you'd love to explore with friends?"
+        ],
+        "empath": {
+            "positive_emotion": 0.025572831423895253,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.020253682487725043,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.0
+    },
+    {
+        "sentence_index": 36,
+        "sentences": [
+            "World tour of UNESCO sites sounds legendary! 🏛️✨ Right now, at the top of my bucket list is Iceland. The landscapes are otherworldly and I'd love to see the Northern Lights IRL — just seems so magical! 🇮🇸🌌 What's a song or playlist that would be your travel soundtrack for an epic adventure like that? Let's get those vibes going! 🎧🚗💿",
+            "New Zealand sounds amazing for an adventure-packed trip with friends! For me, Iceland is definitely a dream destination. The thought of exploring its dramatic landscapes — from the geysers and hot springs to the glaciers and waterfalls — is really exciting. Plus, I've heard that experiencing the Northern Lights there is absolutely magical. It would be such a unique experience to road trip around with friends, checking out all those natural wonders together. Have you ever had any memorable experiences chasing nature's wonders like that?"
+        ],
+        "empath": {
+            "positive_emotion": 0.00819672131147541,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.00819672131147541,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.5
+    },
+    {
+        "sentence_index": 37,
+        "sentences": [
+            "Yesss, those tracks are such a mood booster! 🎶 For me, it's gotta be \"Africa\" by Toto — ultimate adventure vibe. Mix in some Kygo and Avicii for that feel-good energy 🌍✨ What’s the weirdest or most unexpected song you’ve caught yourself jamming out to lately? We all got those guilty pleasures! 😂🎤",
+            "Iceland sounds like an incredible adventure, especially with those natural wonders! I once had a memorable experience chasing nature's beauty in Norway. We ventured out to the Lofoten Islands during the winter, and it was breathtaking. The rugged mountains rising straight from the sea, along with the colorful fishing villages nestled among them, created such a picturesque setting. And of course, witnessing the Northern Lights dancing across the sky was just surreal — truly one of those moments where you feel incredibly lucky to be there. Have you ever done any spontaneous trips to see something extraordinary in nature?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.009433962264150943,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 1.0
+    },
+    {
+        "sentence_index": 38,
+        "sentences": [
+            "Disco hits always bring the good vibes — no shame in that game! 🕺💃 For me, it's probably \"MmmBop\" by Hanson. It’s such a throwback and gets stuck in my head every time, no cap 😂🎤 What’s something super random you’re obsessed with right now? Always down to discover new weirdness! 🌟🧐",
+            "That sounds like such an incredible experience in Norway! I did have a spontaneous trip once when a friend and I decided on a whim to head to Yosemite National Park for the weekend. We had heard about the firefall phenomenon that happens in February, where the setting sun hits Horsetail Fall just right, making it glow like lava. We packed up our gear and drove out with hardly any plans, but it turned out to be amazing. Standing there with other nature lovers as we watched the waterfall light up was truly unforgettable. Have you ever done something spontaneous like that while traveling?"
+        ],
+        "empath": {
+            "positive_emotion": 0.004807692307692308,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.0
+    },
+    {
+        "sentence_index": 39,
+        "sentences": [
+            "Vintage postcards are such a vibe — like mini time capsules! 🕰️✨ When I'm out and about, I always gravitate towards funky socks. The weirder the pattern, the better. Gotta keep those feet stylish! 🧦🤘 What's one item or thing you think everyone should own that makes life just a little bit more lit? Let's share some must-haves! 🔥🔑",
+            "Wow, the firefall at Yosemite sounds absolutely magical! I love those moments when a spontaneous decision leads to such unforgettable experiences. I did something similar once when I was traveling in Peru. A group of us were planning to visit Machu Picchu, but on a whim, we decided to take an extra day and hike up Huayna Picchu as well. The views from the top were stunning — you could see all of Machu Picchu laid out below with the mountains surrounding it. It felt like we had discovered our own little piece of paradise just by being open to adventure. Have you ever had one of those travel moments that exceeded your expectations?"
+        ],
+        "empath": {
+            "positive_emotion": 0.012860541183467142,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0043859649122807015,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.5,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.0
+    },
+    {
+        "sentence_index": 40,
+        "sentences": [
+            "Cozy blankets are def a must-have for that ultimate chill zone! 🛋️🔥 For me, it's all about having a portable phone charger. Keeps my battery anxiety in check and means I can snap pics or vibe to music on the go without stress 😎📱 What's your guilty pleasure snack that you can't live without? Spill the tea! 🍿😋",
+            "That sounds like an incredible experience at Machu Picchu! The spontaneity really adds to the magic of travel, doesn't it? I had a similar moment when visiting Japan. I initially went for the cherry blossoms in Tokyo, but a local recommended a lesser-known spot called Yoshinoyama. On a whim, I decided to check it out and was completely blown away by the sea of cherry blossoms covering the mountainside. It was less crowded and felt more serene than some of the popular spots. Sometimes those unexpected discoveries make the journey even more memorable. Have you found any hidden gems during your travels that left a lasting impression on you?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.008620689655172414,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 2.0
+    },
+    {
+        "sentence_index": 41,
+        "sentences": [
+            "Spicy Cheetos are a snack attack for sure! 🔥🤣 For a \"treat yourself\" day, nothing beats a big ol' bowl of mac and cheese — pure cheesy bliss 🧀✨ What about your go-to comfort movie or show that you always watch when you just need to chill? Let's talk all-time faves! 🎬🍿",
+            "Yoshinoyama sounds absolutely stunning, especially with all those cherry blossoms! Hidden gems really do add an extra layer of magic to a trip. I once stumbled upon a quaint little village in the Czech Republic called Český Krumlov. It wasn't originally on my itinerary, but after hearing some fellow travelers rave about it, I decided to make a detour. The town felt like stepping into a fairytale with its cobblestone streets and charming architecture. Watching the sunset over the Vltava River from the castle was just breathtaking. Do you have any travel destinations you've heard about that you'd love to explore for their hidden charms?"
+        ],
+        "empath": {
+            "positive_emotion": 0.014377289377289378,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.004761904761904762,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.5,
+        "hedge": 2.0
+    },
+    {
+        "sentence_index": 42,
+        "sentences": [
+            "\"Friends\" is such a vibe! Always there for you, fr. 😂📺 For me, it's gotta be \"Parks and Recreation.\" Leslie Knope's optimism always cracks me up and lifts my mood 🏆💼 What's the weirdest or funniest thing you've seen online lately that totally made your day? Gimme some of those LOLs! 🤣🔗",
+            "Český Krumlov sounds like a fairytale indeed! I’ve always been intrigued by the idea of exploring some lesser-known parts of Portugal, like the Azores. From what I've heard, they're filled with lush landscapes, volcanic craters, and quaint villages that offer a more off-the-beaten-path experience compared to mainland Portugal. The chance to discover natural wonders without the large crowds really appeals to me. Have you ever explored or wanted to explore somewhere that's known for its natural beauty but isn't as touristy?"
+        ],
+        "empath": {
+            "positive_emotion": 0.009615384615384616,
+            "negative_emotion": 0.006172839506172839,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.5
+    },
+    {
+        "sentence_index": 43,
+        "sentences": [
+            "Dogs being derps is always a win! 😂🐾 The last meme that had me rolling was the \"me explaining to my mom\" trend — it's just too relatable how we all go full-on TED Talk trying to get our point across. 🙄🗣️ What's one internet rabbit hole you've fallen into recently? We love those deep dives! 🕳️💻",
+            "The Azores definitely sound like a dream destination with all that untouched natural beauty. I've always wanted to explore the Faroe Islands for similar reasons. The dramatic cliffs, waterfalls, and remote villages seem so enchanting and relatively undiscovered by mainstream tourism. Plus, I imagine it would be an incredible place to experience solitude in nature's grandeur. Is there a particular type of landscape or environment that draws you in when you choose travel destinations?"
+        ],
+        "empath": {
+            "positive_emotion": 0.008771929824561403,
+            "negative_emotion": 0.006756756756756757,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.008771929824561403,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.0
+    },
+    {
+        "sentence_index": 44,
+        "sentences": [
+            "Oddly satisfying vids are such a dopamine hit, no cap! 😍✨ For me, I can't stop watching Bon Appétit's Test Kitchen on YouTube. It's like hanging out with foodie friends and learning to slay in the kitchen 🍳👩‍🍳 What's something you'd love to learn or get better at if you had all the time in the world? Let's dream big! 🌟💭",
+            "The Faroe Islands do have a certain allure with their rugged, untouched landscapes. I tend to be drawn to destinations that offer diverse natural scenery — somewhere you can experience mountains and oceans in close proximity, like New Zealand or Iceland. There's something about having the best of both worlds that really appeals to me. Plus, I love hiking and being near water, so places that combine those elements are always high on my list. How about you? Are there specific features or experiences you look for when picking a place to travel?"
+        ],
+        "empath": {
+            "positive_emotion": 0.021769786708972325,
+            "negative_emotion": 0.00819672131147541,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.01894940948351842,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 4.5
+    },
+    {
+        "sentence_index": 45,
+        "sentences": [
+            "Learning guitar sounds so epic — you'd be the GOAT at campfire sing-alongs! 🎸🔥 If I had all the time, I'd totally get into digital art. Creating mind-blowing visuals and maybe even designing my own merch or meme collection would be a lit way to flex my creativity 🎨💡 What's one thing on your bucket list that's been lowkey haunting you but in an exciting way? Let's share those big dreams! 🌍✨",
+            "I totally get that appeal! Having both mountains and oceans nearby can make for such a dynamic travel experience. For me, I often look for places rich in culture and history. I love wandering through ancient ruins or historic districts because it feels like stepping back in time. Plus, experiencing local traditions and cuisine adds so much depth to a trip. Do you find yourself drawn more to nature-focused destinations, or do cultural experiences play a big role in your travel plans as well?"
+        ],
+        "empath": {
+            "positive_emotion": 0.005952380952380952,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.005952380952380952,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.0
+    },
+    {
+        "sentence_index": 46,
+        "sentences": [
+            "Skydiving is defs next level adrenaline — major respect! 🪂🔥 For me, it's all about exploring Japan. The culture, food, and sights like cherry blossoms are just a whole vibe I need to experience IRL 🌸🇯🇵 If you could have dinner with any celeb or historical figure, who would it be and why? Let's hear those dream dinner party plans! 🍽️✨",
+            "Cultural experiences definitely play a big role in my travel plans too. There's something so enriching about learning the history behind a place and connecting with its people through traditions and food. I love visiting places where you can do both — explore stunning landscapes and dive into cultural heritage. For example, places like Italy offer incredible natural beauty along with deep historical roots and amazing cuisine. Is there a particular destination that you've visited or want to visit because it offers both natural wonders and rich culture?"
+        ],
+        "empath": {
+            "positive_emotion": 0.005681818181818182,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.005681818181818182,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 3.0
+    },
+    {
+        "sentence_index": 47,
+        "sentences": [
+            "Robin Williams would be a total legend to have dinner with — the laughs and wisdom would be unreal! 🥺💖 For me, it'd have to be Freddie Mercury. The guy was an icon, and getting into some deep convos about music and living life unapologetically would be wild 🎤👑 What's your favorite song that you could listen to on repeat without ever getting tired of it? Drop those bangers! 🔥🎶",
+            "Italy is a perfect example with its combo of beautiful landscapes and rich cultural heritage. Another place on my list is Peru. It has the incredible Andes mountains and breathtaking sites like Machu Picchu, along with vibrant local cultures and delicious cuisine. The idea of hiking through such stunning scenery while also experiencing the depth of history there really excites me. Have you ever been to or considered visiting somewhere like that, where both nature and culture offer so much to explore?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 5.0
+    },
+    {
+        "sentence_index": 48,
+        "sentences": [
+            "\"Bohemian Rhapsody\" is like, eternally iconic. Major vibes! 🤘 For me, it's gotta be \"Levitating\" by Dua Lipa — no cap, it just gets me dancing every time 🕺✨ What's a song that everyone loves but you're lowkey not vibing with? Let's spill the tea on those overhyped tracks! 😂☕️",
+            "Peru sounds absolutely amazing, and it's def a place where nature and culture blend beautifully. I've always been intrigued by Japan for similar reasons. It offers breathtaking landscapes, from the cherry blossoms in spring to the serene beauty of Mount Fuji, coupled with an incredibly rich cultural heritage — from traditional tea ceremonies to its modern yet historic cities like Kyoto. It's fascinating how such different elements coexist so harmoniously there. Is there a place you’ve visited that left a lasting impression on you because of its unique combo of culture and nature?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.0,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 1.5
+    },
+    {
+        "sentence_index": 49,
+        "sentences": [
+            "\"Despacito\" was everywhere fr, like it never took a break! 😂 As for trends, I just couldn't get into TikTok dance challenges. Watching? Yes. Doing them? Major struggle bus 💀🚫 What's something super popular that you secretly love but don't always admit to everyone? Let's confess those guilty pleasures! 🙈💕",
+            "Japan is a fantastic choice with its seamless mix of nature and culture. For me, Greece left a lasting impression for similar reasons. The stunning landscapes, like the cliffs of Santorini or the rugged beauty of Crete, are complemented by ancient ruins and rich mythology that you can feel as you explore historical sites like the Acropolis. Plus, Greek hospitality and cuisine really added to the experience. Is there a place you've visited that surprised you with its cultural richness or natural beauty?"
+        ],
+        "empath": {
+            "positive_emotion": 0.01,
+            "negative_emotion": 0.01602409638554217,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.01,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.5,
+        "hedge": 3.5
+    },
+    {
+        "sentence_index": 50,
+        "sentences": [
+            "Reality TV is def the OG of guilty pleasures — all the drama is like a rollercoaster you can't quit! 🎢😆 For me, rewatching \"Friends\" is where it's at. It's just classic good vibes and always makes me laugh 😂🛋️ What's your go-to snack when you're binging your fave shows? Let's hear those munchie faves! 🍕🍫",
+            "Greece sounds incredible, with its blend of ancient history and natural beauty. For me, Morocco was a surprising discovery in terms of cultural richness and diverse landscapes. From the bustling markets of Marrakech to the serene Sahara Desert dunes, it felt like every place had its own unique story to tell. The architecture is stunning too — especially the intricate details you find in mosques and palaces. Did you find any aspects of Greece particularly surprising or different from what you expected?"
+        ],
+        "empath": {
+            "positive_emotion": 0.0,
+            "negative_emotion": 0.008928571428571428,
+            "swearing_terms": 0.0,
+            "social": 0.0,
+            "affection": 0.0,
+            "dominance": 0.0
+        },
+        "pronoun_1st": 0.0,
+        "pronoun_2nd": 0.0,
+        "negation": 0.0,
+        "hedge": 2.5
+    }
+]

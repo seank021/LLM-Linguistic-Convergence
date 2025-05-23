@@ -111,27 +111,32 @@ class Utils:
 # This is the main function that orchestrates the analysis.
 if __name__ == "__main__":
     conversation_type = Utils.get_arguments()
-    persona1, persona2, baseline = Utils.get_personas(conversation_type)
     empath_lexicon = Empath()
     empath_categories = ["positive_emotion", "negative_emotion","swearing_terms", "social", "affection", "dominance"]
     hedging_words = Utils.get_hedging_words()
 
-    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5"]:
+    for conversation in ["conversation1", "conversation2", "conversation3", "conversation4", "conversation5", "conversation6", "conversation7"]:
+        persona1, persona2, baseline = Utils.get_personas(conversation_type)
         print(f"- Analyzing {conversation}...")
         # Load conversation data
         print(f"    > Loading conversation data for {conversation} in {conversation_type}...")
         if conversation == "conversation1" or conversation == "conversation2":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
+            persona1, persona2 = persona1, persona2
         elif conversation == "conversation3":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{baseline}1.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}2.json"
-        elif conversation == "conversation4":
+            persona1, persona2 = baseline + "1", baseline + "2"
+        elif conversation == "conversation4" or conversation == "conversation6":
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona1}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
-        else: # conversation == "conversation5"
+            persona1, persona2 = persona1, baseline
+        else: # conversation5 or conversation7
             file_path1 = f"conversations/{conversation_type}/{conversation}/{persona2}.json"
             file_path2 = f"conversations/{conversation_type}/{conversation}/{baseline}.json"
+            persona1, persona2 = persona2, baseline
+
         data1 = Utils.load_json(file_path1)
         data2 = Utils.load_json(file_path2)
         persona1_dialogue = Utils.json_to_list(data1)
@@ -151,7 +156,6 @@ if __name__ == "__main__":
                 "pronoun_2nd": analyzer1.count_pronoun_2nd(),
                 "negation": analyzer1.count_negation(),
                 "hedge": analyzer1.count_hedge(hedging_words),
-                # Add other LIWC features here
             })
             # Analyze the second persona
             analyzer2 = LIWCAnalyzer(persona2_sentence)
@@ -188,8 +192,9 @@ if __name__ == "__main__":
         Utils.draw_plots([s["negation"] for s in stats1], [s["negation"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "negation")
         Utils.draw_plots([s["hedge"] for s in stats1], [s["hedge"] for s in stats2], labels, xlabel, ylabel, output_dir_plots, "hedging")
 
-    # Ablation: Average of Conversation1 and Conversation2
-    print("- Ablation: Analyzing the Average of Conversation1 and Conversation2...")
+    # Average of Conversation1 and Conversation2
+    print("- Analyzing the Average of Conversation1 and Conversation2...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[1]
     conv1_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation1/{persona1}.json")
     conv1_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation1/{persona2}.json")
     conv2_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation2/{persona1}.json")
@@ -240,6 +245,9 @@ if __name__ == "__main__":
     # Draw average plots
     print(f"    > Drawing average plots for the average of conversation1 and conversation2...")
     output_dir_avg_plots = f"results/plots/{conversation_type}/liwc/conversation1_2_average"
+    labels = [persona1, persona2]
+    xlabel = "Sentence Index"
+    ylabel = "LIWC Statistics"
     Utils.draw_plots([s["empath"]["positive_emotion"] for s in avg_persona1_stats], [s["empath"]["positive_emotion"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "positive_emotion")
     Utils.draw_plots([s["empath"]["negative_emotion"] for s in avg_persona1_stats], [s["empath"]["negative_emotion"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "negative_emotion")
     Utils.draw_plots([s["empath"]["swearing_terms"] for s in avg_persona1_stats], [s["empath"]["swearing_terms"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "swearing_terms")
@@ -251,4 +259,136 @@ if __name__ == "__main__":
     Utils.draw_plots([s["negation"] for s in avg_persona1_stats], [s["negation"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "negation")
     Utils.draw_plots([s["hedge"] for s in avg_persona1_stats], [s["hedge"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "hedging")
 
+    # Average of Conversation4 and Conversation6
+    print("- Analyzing the Average of Conversation4 and Conversation6...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[0], Utils.get_personas(conversation_type)[2]
+    conv4_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation4/{persona1}.json")
+    conv4_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation4/{persona2}.json")
+    conv6_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation6/{persona1}.json")
+    conv6_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation6/{persona2}.json")
+    avg_persona1_stats, avg_persona2_stats = [], []
+    for i, (conv4_stats, conv6_stats) in enumerate(zip(conv4_persona1_stats, conv6_persona1_stats)):
+        avg_persona1_stats.append({
+            "sentence_index": i+1,
+            "sentences": [conv4_stats["sentence"], conv6_stats["sentence"]],
+            "empath": {
+                "positive_emotion": (conv4_stats["empath"]["positive_emotion"] + conv6_stats["empath"]["positive_emotion"]) / 2,
+                "negative_emotion": (conv4_stats["empath"]["negative_emotion"] + conv6_stats["empath"]["negative_emotion"]) / 2,
+                "swearing_terms": (conv4_stats["empath"]["swearing_terms"] + conv6_stats["empath"]["swearing_terms"]) / 2,
+                "social": (conv4_stats["empath"]["social"] + conv6_stats["empath"]["social"]) / 2,
+                "affection": (conv4_stats["empath"]["affection"] + conv6_stats["empath"]["affection"]) / 2,
+                "dominance": (conv4_stats["empath"]["dominance"] + conv6_stats["empath"]["dominance"]) / 2,
+            },
+            "pronoun_1st": (conv4_stats["pronoun_1st"] + conv6_stats["pronoun_1st"]) / 2,
+            "pronoun_2nd": (conv4_stats["pronoun_2nd"] + conv6_stats["pronoun_2nd"]) / 2,
+            "negation": (conv4_stats["negation"] + conv6_stats["negation"]) / 2,
+            "hedge": (conv4_stats["hedge"] + conv6_stats["hedge"]) / 2,
+        })
+    for i, (conv4_stats, conv6_stats) in enumerate(zip(conv4_persona2_stats, conv6_persona2_stats)):
+        avg_persona2_stats.append({
+            "sentence_index": i+1,
+            "sentences": [conv4_stats["sentence"], conv6_stats["sentence"]],
+            "empath": {
+                "positive_emotion": (conv4_stats["empath"]["positive_emotion"] + conv6_stats["empath"]["positive_emotion"]) / 2,
+                "negative_emotion": (conv4_stats["empath"]["negative_emotion"] + conv6_stats["empath"]["negative_emotion"]) / 2,
+                "swearing_terms": (conv4_stats["empath"]["swearing_terms"] + conv6_stats["empath"]["swearing_terms"]) / 2,
+                "social": (conv4_stats["empath"]["social"] + conv6_stats["empath"]["social"]) / 2,
+                "affection": (conv4_stats["empath"]["affection"] + conv6_stats["empath"]["affection"]) / 2,
+                "dominance": (conv4_stats["empath"]["dominance"] + conv6_stats["empath"]["dominance"]) / 2,
+            },
+            "pronoun_1st": (conv4_stats["pronoun_1st"] + conv6_stats["pronoun_1st"]) / 2,
+            "pronoun_2nd": (conv4_stats["pronoun_2nd"] + conv6_stats["pronoun_2nd"]) / 2,
+            "negation": (conv4_stats["negation"] + conv6_stats["negation"]) / 2,
+            "hedge": (conv4_stats["hedge"] + conv6_stats["hedge"]) / 2,
+        })
+    
+    # Save average statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation4 and conversation6...")
+    output_dir_avg_statistics = f"results/statistics/{conversation_type}/liwc/conversation4_6_average"
+    Utils.save_stats_to_file(avg_persona1_stats, output_dir_avg_statistics, f"{persona1}")
+    Utils.save_stats_to_file(avg_persona2_stats, output_dir_avg_statistics, f"{persona2}")
+
+    # Draw average plots
+    print(f"    > Drawing average plots for the average of conversation4 and conversation6...")
+    output_dir_avg_plots = f"results/plots/{conversation_type}/liwc/conversation4_6_average"
+    labels = [persona1, persona2]
+    xlabel = "Sentence Index"
+    ylabel = "LIWC Statistics"
+    Utils.draw_plots([s["empath"]["positive_emotion"] for s in avg_persona1_stats], [s["empath"]["positive_emotion"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "positive_emotion")
+    Utils.draw_plots([s["empath"]["negative_emotion"] for s in avg_persona1_stats], [s["empath"]["negative_emotion"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "negative_emotion")
+    Utils.draw_plots([s["empath"]["swearing_terms"] for s in avg_persona1_stats], [s["empath"]["swearing_terms"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "swearing_terms")
+    Utils.draw_plots([s["empath"]["social"] for s in avg_persona1_stats], [s["empath"]["social"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "social")
+    Utils.draw_plots([s["empath"]["affection"] for s in avg_persona1_stats], [s["empath"]["affection"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "affection")
+    Utils.draw_plots([s["empath"]["dominance"] for s in avg_persona1_stats], [s["empath"]["dominance"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "dominance")
+    Utils.draw_plots([s["pronoun_1st"] for s in avg_persona1_stats], [s["pronoun_1st"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "pronoun_1st")
+    Utils.draw_plots([s["pronoun_2nd"] for s in avg_persona1_stats], [s["pronoun_2nd"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "pronoun_2nd")
+    Utils.draw_plots([s["negation"] for s in avg_persona1_stats], [s["negation"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "negation")
+    Utils.draw_plots([s["hedge"] for s in avg_persona1_stats], [s["hedge"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "hedging")
+
+    # Average of Conversation5 and Conversation7
+    print("- Analyzing the Average of Conversation5 and Conversation7...")
+    persona1, persona2 = Utils.get_personas(conversation_type)[1], Utils.get_personas(conversation_type)[2]
+    conv5_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation5/{persona1}.json")
+    conv5_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation5/{persona2}.json")
+    conv7_persona1_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation7/{persona1}.json")
+    conv7_persona2_stats = Utils.load_json(f"results/statistics/{conversation_type}/liwc/conversation7/{persona2}.json")
+    avg_persona1_stats, avg_persona2_stats = [], []
+    for i, (conv5_stats, conv7_stats) in enumerate(zip(conv5_persona1_stats, conv7_persona1_stats)):
+        avg_persona1_stats.append({
+            "sentence_index": i+1,
+            "sentences": [conv5_stats["sentence"], conv7_stats["sentence"]],
+            "empath": {
+                "positive_emotion": (conv5_stats["empath"]["positive_emotion"] + conv7_stats["empath"]["positive_emotion"]) / 2,
+                "negative_emotion": (conv5_stats["empath"]["negative_emotion"] + conv7_stats["empath"]["negative_emotion"]) / 2,
+                "swearing_terms": (conv5_stats["empath"]["swearing_terms"] + conv7_stats["empath"]["swearing_terms"]) / 2,
+                "social": (conv5_stats["empath"]["social"] + conv7_stats["empath"]["social"]) / 2,
+                "affection": (conv5_stats["empath"]["affection"] + conv7_stats["empath"]["affection"]) / 2,
+                "dominance": (conv5_stats["empath"]["dominance"] + conv7_stats["empath"]["dominance"]) / 2,
+            },
+            "pronoun_1st": (conv5_stats["pronoun_1st"] + conv7_stats["pronoun_1st"]) / 2,
+            "pronoun_2nd": (conv5_stats["pronoun_2nd"] + conv7_stats["pronoun_2nd"]) / 2,
+            "negation": (conv5_stats["negation"] + conv7_stats["negation"]) / 2,
+            "hedge": (conv5_stats["hedge"] + conv7_stats["hedge"]) / 2,
+        })
+    for i, (conv5_stats, conv7_stats) in enumerate(zip(conv5_persona2_stats, conv7_persona2_stats)):
+        avg_persona2_stats.append({
+            "sentence_index": i+1,
+            "sentences": [conv5_stats["sentence"], conv7_stats["sentence"]],
+            "empath": {
+                "positive_emotion": (conv5_stats["empath"]["positive_emotion"] + conv7_stats["empath"]["positive_emotion"]) / 2,
+                "negative_emotion": (conv5_stats["empath"]["negative_emotion"] + conv7_stats["empath"]["negative_emotion"]) / 2,
+                "swearing_terms": (conv5_stats["empath"]["swearing_terms"] + conv7_stats["empath"]["swearing_terms"]) / 2,
+                "social": (conv5_stats["empath"]["social"] + conv7_stats["empath"]["social"]) / 2,
+                "affection": (conv5_stats["empath"]["affection"] + conv7_stats["empath"]["affection"]) / 2,
+                "dominance": (conv5_stats["empath"]["dominance"] + conv7_stats["empath"]["dominance"]) / 2,
+            },
+            "pronoun_1st": (conv5_stats["pronoun_1st"] + conv7_stats["pronoun_1st"]) / 2,
+            "pronoun_2nd": (conv5_stats["pronoun_2nd"] + conv7_stats["pronoun_2nd"]) / 2,
+            "negation": (conv5_stats["negation"] + conv7_stats["negation"]) / 2,
+            "hedge": (conv5_stats["hedge"] + conv7_stats["hedge"]) / 2,
+        })
+
+    # Save average statistics to JSON files
+    print(f"    > Saving average statistics for the average of conversation5 and conversation7...")
+    output_dir_avg_statistics = f"results/statistics/{conversation_type}/liwc/conversation5_7_average"
+    Utils.save_stats_to_file(avg_persona1_stats, output_dir_avg_statistics, f"{persona1}")
+    Utils.save_stats_to_file(avg_persona2_stats, output_dir_avg_statistics, f"{persona2}")
+
+    # Draw average plots
+    print(f"    > Drawing average plots for the average of conversation5 and conversation7...")
+    output_dir_avg_plots = f"results/plots/{conversation_type}/liwc/conversation5_7_average"
+    labels = [persona1, persona2]
+    xlabel = "Sentence Index"
+    ylabel = "LIWC Statistics"
+    Utils.draw_plots([s["empath"]["positive_emotion"] for s in avg_persona1_stats], [s["empath"]["positive_emotion"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "positive_emotion")
+    Utils.draw_plots([s["empath"]["negative_emotion"] for s in avg_persona1_stats], [s["empath"]["negative_emotion"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "negative_emotion")
+    Utils.draw_plots([s["empath"]["swearing_terms"] for s in avg_persona1_stats], [s["empath"]["swearing_terms"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "swearing_terms")
+    Utils.draw_plots([s["empath"]["social"] for s in avg_persona1_stats], [s["empath"]["social"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "social")
+    Utils.draw_plots([s["empath"]["affection"] for s in avg_persona1_stats], [s["empath"]["affection"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "affection")
+    Utils.draw_plots([s["empath"]["dominance"] for s in avg_persona1_stats], [s["empath"]["dominance"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "dominance")
+    Utils.draw_plots([s["pronoun_1st"] for s in avg_persona1_stats], [s["pronoun_1st"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "pronoun_1st")
+    Utils.draw_plots([s["pronoun_2nd"] for s in avg_persona1_stats], [s["pronoun_2nd"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "pronoun_2nd")
+    Utils.draw_plots([s["negation"] for s in avg_persona1_stats], [s["negation"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "negation")
+    Utils.draw_plots([s["hedge"] for s in avg_persona1_stats], [s["hedge"] for s in avg_persona2_stats], labels, xlabel, ylabel, output_dir_avg_plots, "hedging")
+    
     print(f"Finished analyzing liwc for {conversation_type}. All results saved in the 'results' directory.")
