@@ -1,0 +1,10 @@
+{
+    "compression_ratio": 3.117,
+    "pos_compression_ratio": 5.221,
+    "homogenization_rougel": 0.124,
+    "homogenization_bertscore": 0.77,
+    "self_bleu": 0.01,
+    "ngram_diversity_2": 1.111,
+    "ngram_diversity_3": 2.071,
+    "ngram_diversity_4": 3.058
+}
