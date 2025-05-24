@@ -1,4 +1,4 @@
-# LLM-Linguistic-Convergence
+# Do LLMs Adapt? A Study on Stylistic Convergence in Dialogue
 
 ## Project Overview
 LLM-Linguistic-Convergence is a framework for analyzing whether large language models (LLMs) exhibit linguistic style convergence—that is, whether they adapt to the stylistic features (e.g., tone, sentence structure, lexical choice) of their conversation partners during dialogue.
