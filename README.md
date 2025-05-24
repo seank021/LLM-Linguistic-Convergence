@@ -55,9 +55,11 @@ LLM-Linguistic-Convergence/
 │   └── gpt4o_age/                  # Folder for age pair conversations
 │       └── conversation1/          # Starts with A's response to the initial prompt given in B's style
 |       └── conversation2/          # Starts with B's response to the initial prompt given in A's style
-│       └── conversation3/          # Baseline-baseline conversation (for comparison)
-│       └── conversation4/          # Baseline-style_a conversation (for comparison)
-│       └── conversation5/          # Baseline-style_b conversation (for comparison)
+│       └── conversation3/          # Baseline-baseline conversation
+│       └── conversation4/          # Baseline-style_a conversation
+│       └── conversation5/          # Baseline-style_b conversation
+|       └── conversation6/          # Style_a-Baseline conversation
+│       └── conversation7/          # Style_b-Baseline conversation
 │   └── gpt4o_culture/              # Folder for culture pair conversations
 │       └── ...
 │   └── gpt4o_thinking_style/       # Folder for thinking style pair conversations
