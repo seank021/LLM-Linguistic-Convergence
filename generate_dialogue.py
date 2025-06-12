@@ -63,13 +63,13 @@ def generate_conversation(model_cfg, persona_cfg, num_turns, selected_convs):
         INITIAL_PROMPT_in_style_baseline = "What are your thoughts on the importance of traditional grammar and pronunciation in public speech? Do you believe that maintaining these standards is essential for effective communication, or should we embrace more informal and evolving ways of speaking?"
     elif style_a == "creative_expressive":
         # topic: logic vs. creativity
-        INITIAL_PROMPT_in_style_a = "While creativity may feel inspiring, doesn’t unstructured thinking often lead to confusion or error? Isn’t disciplined reasoning more reliable for understanding reality?"
-        INITIAL_PROMPT_in_style_b = "Some say logic rules the world, but what about the wild spark of imagination, or the thrill of an idea that makes no sense but feels completely right? Isn’t that what makes us human?"
+        INITIAL_PROMPT_in_style_a = "Some say logic rules the world, but what about the wild spark of imagination, or the thrill of an idea that makes no sense but feels completely right? Isn’t that what makes us human?"
+        INITIAL_PROMPT_in_style_b = "While creativity may feel inspiring, doesn’t unstructured thinking often lead to confusion or error? Isn’t disciplined reasoning more reliable for understanding reality?"
         INITIAL_PROMPT_in_style_baseline = "What are your thoughts on the balance between logic and creativity in communication? Do you believe that structured reasoning is more reliable for understanding reality, or do you think that creativity and imagination play a crucial role in human expression?"
     else: # style_a == "polite_positive"
         # topic: politeness vs. honesty
-        INITIAL_PROMPT_in_style_a = "Being polite is just sugarcoating. Why fake nice when most people don’t care anyway? Isn’t honesty better than pretending to be decent?"
-        INITIAL_PROMPT_in_style_b = "Even when we disagree, don’t you think a kind word or a little patience can go a long way? Isn’t respect what keeps conversations human?"
+        INITIAL_PROMPT_in_style_a = "Even when we disagree, don’t you think a kind word or a little patience can go a long way? Isn’t respect what keeps conversations human?"
+        INITIAL_PROMPT_in_style_b = "Being polite is just sugarcoating. Why fake nice when most people don’t care anyway? Isn’t honesty better than pretending to be decent?"
         INITIAL_PROMPT_in_style_baseline = "What are your thoughts on the balance between politeness and honesty in communication? Do you believe that being polite is more important than being honest, or do you think that honesty should take precedence over politeness?"
 
     # Models with persona
